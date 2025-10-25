@@ -121,7 +121,7 @@ const Navbar: React.FC = () => {
               height={25}
               width={24}
               className="w-25 mr-2"
-              src="/logocolor.svg"
+              src="/icons/logocolor.svg"
               alt="Logo"
               priority
             />
