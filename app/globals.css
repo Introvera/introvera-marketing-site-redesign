@@ -62,3 +62,78 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-saira), -apple-system, Roboto, Helvetica, sans-serif;
   font-weight: 600;
 }
+
+
+/* ───────────────────── Testimonials Background ───────────────────── */
+.testimonials-shell{
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* Background image behind the cards */
+.testimonials-bg{
+  position: absolute;
+  inset: 0;
+  background-image: url("/backgrounds/testimonials/gradient-behind-testimonials.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  pointer-events: none;           /* never intercept clicks */
+  filter: brightness(0.92);       /* tweak if too bright */
+}
+
+/* Optional dark overlay so text pops */
+.testimonials-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.18);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* keep your existing styles */
+.glass-surface{
+  background: linear-gradient(135deg, color-mix(in oklab, var(--color-gradient-card1) 85%, #000 15%), var(--color-gradient-card2));
+  border: 1px solid rgb(255 255 255 / 0.10);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.06),
+    0 10px 30px rgb(0 0 0 / 0.28);
+}
+
+.grad-divider{
+  height:1px;
+  background: linear-gradient(90deg, transparent, #5C7CFF, #8A4DFF, transparent);
+  border-radius:999px;
+}
+
+.section-glow{
+  background: radial-gradient(70% 60% at 50% 0%, rgba(92,124,255,0.08) 0%, rgba(138,77,255,0.05) 35%, transparent 70%);
+}
+.testimonials-fullbg {
+  position: relative;
+  background-image: url("/backgrounds/testimonials/gradient-behind-testimonials.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.testimonials-fullbg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.20); /* optional darken */
+  pointer-events: none;
+}
+.text-bright {
+  color: #ffffff;
+  filter: brightness(1.15);
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-poppins), -apple-system, Roboto, Helvetica, sans-serif;
+}
+.text-bright-soft {
+  color: #f4f4f5;
+  filter: brightness(1.1);
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+}
