@@ -1,12 +1,12 @@
+"use client";
+import {Card, CardFooter, Image, Button} from "@heroui/react";
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
-import Image from "next/image";
-
+import {Aboutus} from "./component/AboutUs";
 export default function Home() {
   return (
-    
-    <>
+      <>
       <Hero />
-    </>
+      <Aboutus />
+      </>
   );
 }

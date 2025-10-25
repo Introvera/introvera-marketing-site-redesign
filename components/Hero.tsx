@@ -16,17 +16,6 @@ const Hero: React.FC = () => {
   }}
 >
     <Navbar />
-      {/* Subtle hex background overlay
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage:
-            "url('/hex-bg.png')", // Place a faint hex pattern (optional)
-          backgroundRepeat: "repeat",
-          backgroundSize: "contain",
-        }}
-      /> */}
-
       {/* Text content */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -43,7 +32,7 @@ const Hero: React.FC = () => {
   <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white mb-2">
     INNOVATING TOMORROW,
     <br />
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#655DF4] to-[#986DD0]">
+    <span className="text-transparent bg-clip-text gradient-text-line">  
       ONE LINE OF CODE AT A TIME
     </span>
   </h1>

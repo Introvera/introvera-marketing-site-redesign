@@ -1,26 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+@plugin '../hero.ts';
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  /* --font-poppins: var(--font-poppins);
+  --font-saira: "Saira", sans-serif; */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-saira);
+  --font-body: var(--font-poppins);
+
+  /* Default text color (global font color) */
+  --color-text-default: #AAAAAA;
+
+  /* Text Colors for Gradient */
+  --color-gradient-text1: #655DF4;
+  --color-gradient-text2: #7E65E2;
+  --color-gradient-text3: #986DD0;
+
+  /* Card Colors for Gradient */
+  --color-gradient-card1: #090909;
+  --color-gradient-card2: #170034;
+
+  /* Gradients */
+   --gradient-text: linear-gradient(
+    to right,
+    var(--color-gradient-text1),
+    var(--color-gradient-text2),
+    var(--color-gradient-text3)
+  );
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility gradient-text-line {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text-default);
+  font-family: var(--font-poppins), -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+}
+p {
+  color: var(--color-text-default);
+  font-family: var(--font-poppins), -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-family: var(--font-saira), -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 600;
 }
