@@ -137,7 +137,7 @@ export default function Testimonials({ items = ITEMS }: { items?: Testimonial[] 
     {/* Full-width background (covers heading + cards) */}
     <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <Image
-        src="/backgrounds/testimonials/gradient-behind-testimonials.png"
+        src="/backgrounds/testimonials/gradient%20behind%20testimonials.png"
         alt="Testimonials background"
         fill
         priority
