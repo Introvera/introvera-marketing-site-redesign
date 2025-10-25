@@ -15,14 +15,14 @@ export const Aboutus = () => {
     >
       <div className="relative mx-auto px-4 sm:px-24 lg:px-24 py-14 lg:py-24">
 
-        <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wide">
+        <h1 className="text-center text-3xl sm:text-4xl tracking-wide">
           <span>ABOUT </span>
           <span className="gradient-text-line">
             INTROVERA
           </span>
-        </h2>
+        </h1>
 
-        <p className="mt-8 text-base text-center text-balance">
+        <p className="mt-8 text-center">
           At Introvera, innovation is at the heart of everything we do. 
           We are a team of thinkers, creators, and engineers dedicated to 
           designing digital solutions that help businesses and individuals 
