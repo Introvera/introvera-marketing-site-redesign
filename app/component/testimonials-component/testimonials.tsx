@@ -70,12 +70,11 @@ const ITEMS: Testimonial[] = [
 ];
 
 /* ─────────────────────────── Card (visual unchanged) ─────────────────────────── */
-const cardBase =
-  "relative rounded-[20px] bg-black/30 backdrop-blur px-5 pt-4 pb-5 " +
-  "shadow-[0_20px_60px_rgba(0,0,0,0.35)] " +
-  "before:content-[''] before:absolute before:inset-0 before:rounded-[20px] " +
-  "before:border before:[border-color:#7B16FF47]";
 
+const cardBase =
+  "relative flex flex-col justify-between h-[362px] rounded-[20px] bg-black/[0.28] backdrop-blur px-5 pt-4 pb-5 " +
+  "shadow-[0_20px_60px_rgba(0,0,0,0.35)] " +
+  "border border-[rgba(76,1,174,0.28)]";
 function Card({ t }: { t: Testimonial }) {
   return (
     <article className={cardBase}>
@@ -159,22 +158,22 @@ export default function Testimonials({ items = ITEMS }: { items?: Testimonial[] 
         </h2>
 
         {/* Thin rule – 16px below heading */}
-        <div className="mt-4 h-[3px] w-full bg-gradient-to-r from-transparent via-[#5C7CFF] to-transparent" />
+        {/* <div className="mt-4 h-[3px] w-full bg-gradient-to-r from-transparent via-[#5C7CFF] to-transparent" /> */}
 
         {/* About 60–75px below rule (adjustable) */}
-        <div className="mt-[128px]">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            <div className="flex flex-col gap-8">
+        <div className="mt-[96px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[14px] items-start">
+            <div className="flex flex-col gap-[14px]">
             {col1.map((t) => (
                 <Card key={t.id} t={t} />
             ))}
             </div>
-            <div className="flex flex-col gap-8 -mt-12">
+            <div className="flex flex-col gap-[14px] -mt-12">
             {col2.map((t) => (
                 <Card key={t.id} t={t} />
             ))}
             </div>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-[14px]">
             {col3.map((t) => (
                 <Card key={t.id} t={t} />
             ))}
