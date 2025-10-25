@@ -28,6 +28,11 @@
   /* Card Colors for Gradient */
   --color-gradient-card1: #090909;
   --color-gradient-card2: #170034;
+  --color-gradient-card3: #353333;
+  --color-gradient-card4: #000000;
+
+  /* Why Choose Us Gradient */
+  --color-gradient-ball: #4C01AE;
 
   /* Gradients */
    --gradient-text: linear-gradient(
