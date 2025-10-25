@@ -54,13 +54,13 @@ const Hero: React.FC = () => {
   </button>
 
   {/* Right Gradient Border Button */}
-  <div className="rounded-full bg-gradient-to-l from-[#4C01AE] to-[#B38CFF] p-[2px]">
-  <button className="w-[174px] h-[56px] py-[10px] px-[20px] rounded-full border-2 border-transparent bg-black text-white font-semibold text-sm hover:bg-[#4C01AE]/20 transition">
-    View Our Work
-  </button>
+  <div className="rounded-full bg-gradient-to-l from-[#4C01AE] to-[#B38CFF] p-[2px] w-[140px] sm:w-[174px] h-[50px] sm:h-[56px]">
+    <button className="w-full h-full rounded-full border-2 border-transparent bg-black text-white font-semibold text-sm hover:bg-[#4C01AE]/20 transition">
+      View Our Work
+    </button>
+  </div>
 </div>
 
-        </div>
       </motion.div>
     </section>
   );
