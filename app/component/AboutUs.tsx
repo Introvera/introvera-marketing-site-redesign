@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export const Aboutus = () => {
   return (
-    <section
+    <section id="aboutus"
       className="
         relative w-full
         bg-[url('/backgrounds/aboutus.png')] bg-cover bg-center

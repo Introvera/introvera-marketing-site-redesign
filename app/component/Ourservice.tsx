@@ -97,9 +97,12 @@ const services: Service[] = [
 
 export default function ServicesGrid() {
   return (
-    <section className="py-28 px-6 sm:px-8 md:px-10 lg:px-16 bg-black text-white">
+    <section id="services" className="py-28 px-6 sm:px-8 md:px-10 lg:px-16 bg-[url('/backgrounds/aboutus.png')] bg-cover bg-center">
       <h2 className="text-3xl md:text-[32px] lg:text-4xl font-bold text-center mb-14">
-        WHAT WE <span className="text-purple-500">PROVIDE</span>
+        <span>WHAT WE </span>
+        <span className="gradient-text-line">
+            PROVIDE
+          </span>
       </h2>
 
       <div
