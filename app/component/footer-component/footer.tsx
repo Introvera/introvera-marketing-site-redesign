@@ -5,25 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 
-/* ─────────────────────────── Types ─────────────────────────── */
+/* ── Types ── */
 type NavLink = { label: string; href: string };
-type SocialLink = {
-  label: string;
-  href: string;
-  icon?: React.ReactNode; // falls back to generic icon if omitted
-};
+type SocialLink = { label: string; href: string; icon?: React.ReactNode };
 type ContactConfig = {
   addressLines?: string[];
-  phone?: { label?: string; value: string; href?: string }; // href like "tel:+94783640894"
-  email?: { label?: string; value: string; href?: string }; // href like "mailto:team@introvera.com"
+  phone?: { label?: string; value: string; href?: string };
+  email?: { label?: string; value?: string; href?: string };
 };
-type LogoConfig = {
-  src?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  text?: string; // Use when no image
-};
+type LogoConfig = { src?: string; alt?: string; width?: number; height?: number; text?: string };
 export type FooterConfig = {
   logo?: LogoConfig;
   blurb?: string;
@@ -32,10 +22,10 @@ export type FooterConfig = {
   contact?: ContactConfig;
   showDivider?: boolean;
   copyright?: string;
-  className?: string; // wrapper style hook
+  className?: string;
 };
 
-/* ───────────────────────── Inline Icons (no deps) ───────────────────────── */
+/* ── Inline Icons (unchanged) ── */
 const IcFacebook = (p: any) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
     <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 5.01 3.66 9.16 8.44 9.93v-7.02H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34V22c4.78-.77 8.44-4.92 8.44-9.93z" />
@@ -48,7 +38,7 @@ const IcLinkedIn = (p: any) => (
 );
 const IcInstagram = (p: any) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
-    <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.6.5.66.26 1.22.61 1.77 1.16.55.55.9 1.11 1.16 1.77.26.65.45 1.43.5 2.6.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.5 2.6a4.6 4.6 0 0 1-1.16 1.77 4.6 4.6 0 0 1-1.77 1.16c-.65.26-1.43.45-2.6.5-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.6-.5a4.6 4.6 0 0 1-1.77-1.16 4.6 4.6 0 0 1-1.16-1.77c-.26-.65-.45-1.43-.5-2.6C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.95.5-2.6.26-.66.61-1.22 1.16-1.77.55-.55 1.11-.9 1.77-1.16.65-.26 1.43-.45 2.6-.5C8.42 2.17 8.8 2.16 12 2.16zm0 1.8c-3.15 0-3.52.01-4.77.07-.99.05-1.53.21-1.89.35-.48.19-.82.42-1.18.78-.36.36-.59.7-.78 1.18-.14.36-.3.9-.35 1.89-.06 1.25-.07 1.62-.07 4.77s.01 3.52.07 4.77c.05.99.21 1.53.35 1.89.19.48.42.82.78 1.18.36.36.7.59 1.18.78.36.14.9.3 1.89.35 1.25.06 1.62.07 4.77.07s3.52-.01 4.77-.07c.99-.05 1.53-.21 1.89-.35.48-.19.82-.42 1.18-.78.36-.36.59-.7.78-1.18.14-.36.3-.9.35-1.89.06-1.25.07-1.62.07-4.77s-.01-3.52-.07-4.77c-.05-.99-.21-1.53-.35-1.89a3.03 3.03 0 0 0-.78-1.18 3.03 3.03 0 0 0-1.18-.78c-.36-.14-.9-.3-1.89-.35-1.25-.06-1.62-.07-4.77-.07zm0 3.56a4.48 4.48 0 1 1 0 8.96 4.48 4.48 0 0 1 0-8.96zm0 1.8a2.68 2.68 0 1 0 0 5.36 2.68 2.68 0 0 0 0-5.36zM17.6 6.4a1.04 1.04 0 1 0 0 2.08 1.04 1.04 0 0 0 0-2.08z" />
+    <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.6.5.66.26 1.22.61 1.77 1.16.55.55.9 1.11 1.16 1.77.26.65.45 1.43.5 2.6.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.5 2.6a4.6 4.6 0 0 1-1.16 1.77 4.6 4.6 0 0 1-1.77 1.16c-.65.26-1.43.45-2.6.5-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.6-.5a4.6 4.6 0 0 1-1.77-1.16 4.6 4.6 0 0 1-1.16-1.77c-.26-.65-.45-1.43-.5-2.6C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.95.5-2.6.26-.66.61-1.22 1.16-1.77.55-.55 1.11-.9 1.77-1.16.65-.26 1.43-.45 2.6-.5C8.42 2.17 8.8 2.16 12 2.16zm0 3.36a4.48 4.48 0 1 1 0 8.96 4.48 4.48 0 0 1 0-8.96z" />
   </svg>
 );
 const IcGitHub = (p: any) => (
@@ -72,14 +62,9 @@ const IcMail = (p: any) => (
   </svg>
 );
 
-/* ───────────────────────── Defaults (easy to edit) ───────────────────────── */
+/* ── Defaults ── */
 export const defaultFooterConfig: FooterConfig = {
-  logo: {
-    src: "/icons/logocolor.svg",
-    alt: "Introvera",
-    width: 140,
-    height: 28,
-  },
+  logo: { src: "/icons/logocolor.svg", alt: "Introvera", width: 140, height: 28 },
   blurb:
     "Empowering businesses with intelligent, scalable, and secure software solutions. We build with passion and purpose for the digital future.",
   quickLinks: [
@@ -104,174 +89,129 @@ export const defaultFooterConfig: FooterConfig = {
   copyright: "© 2025 Introvera. All rights reserved.",
 };
 
-/* ─────────────────────────── Component ─────────────────────────── */
-export default function Footer({
-  config = defaultFooterConfig,
-}: {
-  config?: FooterConfig;
-}) {
-  const {
-    logo,
-    blurb,
-    quickLinks = [],
-    socials = [],
-    contact,
-    showDivider = true,
-    copyright,
-    className = "",
-  } = config;
+/* ── Component ── */
+export default function Footer({ config = defaultFooterConfig }: { config?: FooterConfig }) {
+  const { logo, blurb, quickLinks = [], socials = [], contact, showDivider = true, copyright, className = "" } = config;
 
   return (
     <footer className={`w-full ${className}`} aria-labelledby="footer-heading">
-      <h2 id="footer-heading" className="sr-only">
-        Footer
-      </h2>
+      <h2 id="footer-heading" className="sr-only">Footer</h2>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
-          {/* Brand + Blurb */}
-          <div className="md:col-span-4 space-y-4">
+      {/* 72px top/bottom; 1296px container */}
+      <div className="mx-auto max-w-[1296px] px-4 sm:px-6 lg:px-8 pt-[72px] pb-[72px]">
+        {/* IMPORTANT: fixed widths on md+ so the blurb can't push others */}
+        <div className="flex flex-col gap-y-[60px] md:flex-row md:items-start md:gap-x-[100px] md:min-w-0">
+          {/* Brand column — fixed width */}
+          <div className="md:basis-[360px] md:max-w-[360px] md:flex-none space-y-[24px]">
             {logo?.src ? (
-                <div
-                    className="relative w-[196px] h-[39px] aspect-[196/39]"
-                    aria-label={logo.alt ?? "Introvera"}
-                >
-                    <Image
-                    src={logo.src}
-                    alt={logo.alt ?? "Introvera"}
-                    fill                   // use background-like sizing
-                    className="object-cover object-center" // Figma: cover, centered
-                    priority
-                    />
-                </div>
-                ) : logo?.text ? (
-                <div className="text-xl font-semibold tracking-wide">{logo.text}</div>
-                ) : null}
+              <div className="relative w-[196px] h-[39px]">
+                <Image src={logo.src} alt={logo.alt ?? "Introvera"} fill className="object-contain" priority />
+              </div>
+            ) : logo?.text ? (
+              <div className="text-xl font-semibold tracking-wide">{logo.text}</div>
+            ) : null}
 
             {blurb && (
-  <p className="text-bright-soft font-poppins text-[16px] font-normal leading-normal">
-    {blurb}
-  </p>
-)}
-
+              <p className="text-bright-soft font-poppins text-[16px] font-normal leading-normal max-w-[360px]">
+                {blurb}
+              </p>
+            )}
           </div>
 
-          {/* Quick Links */}
-          {quickLinks?.length > 0 && (
-            <div className="md:col-span-3">
-  {/* Title */}
-  <div
-    className="mb-3 text-[18px] font-[600] leading-[32px] font-poppins bg-gradient-to-r from-[#655DF4] to-[#986DD0] bg-clip-text text-transparent"
-  >
-    Quick Links
-  </div>
-
-  {/* Links */}
-  <ul className="space-y-2">
-    {quickLinks.map((l) => (
-      <li key={l.label}>
-        <Link
-          href={l.href}
-          className="block text-bright-soft font-poppins text-[16px] font-normal leading-normal hover:opacity-90 transition-opacity"
-        >
-          {l.label}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
-
+          {/* Quick Links — fixed width */}
+          {quickLinks.length > 0 && (
+            <div className="md:basis-[180px] md:flex-none">
+              <div className="mb-3 text-[18px] font-[600] leading-[32px] font-poppins bg-gradient-to-r from-[#655DF4] to-[#986DD0] bg-clip-text text-transparent">
+                Quick Links
+              </div>
+              <ul className="space-y-[8px]">
+                {quickLinks.map((l) => (
+                  <li key={l.label}>
+                    <Link
+                      href={l.href}
+                      className="block text-bright-soft font-poppins text-[16px] font-normal leading-normal hover:opacity-90 transition-opacity"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
 
-          {/* Socials */}
-{socials?.length > 0 && (
-  <div className="md:col-span-2">
-    {/* Title */}
-    <div
-      className="mb-3 text-[18px] font-[600] leading-[32px]  font-poppins
-                 bg-gradient-to-r from-[#655DF4] to-[#986DD0] bg-clip-text text-transparent"
-    >
-      Follow Us
-    </div>
+          {/* Socials — fixed width */}
+          {socials.length > 0 && (
+            <div className="md:basis-[180px] md:flex-none">
+              <div className="mb-3 text-[18px] font-[600] leading-[32px] font-poppins bg-gradient-to-r from-[#655DF4] to-[#986DD0] bg-clip-text text-transparent">
+                Follow Us
+              </div>
+              <ul className="space-y-[8px]">
+                {socials.map((s) => (
+                  <li key={s.label}>
+                    <Link
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-[12px]"
+                      aria-label={s.label}
+                    >
+                      <span className="w-5 h-5 flex-shrink-0 text-[#4E4F53] [&>svg]:w-5 [&>svg]:h-5 [&>svg]:block">
+                        {s.icon}
+                      </span>
+                      <span className="text-bright-soft font-poppins text-[16px] font-normal leading-normal">
+                        {s.label}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-    {/* Items */}
-    <ul className="space-y-2">
-      {socials.map((s) => (
-        <li key={s.label}>
-  <Link
-    href={s.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center gap-3"
-    aria-label={s.label}
-  >
-    {/* Force any child <svg> to 20×20 */}
-    <span className="w-5 h-5 flex-shrink-0 text-[#4E4F53] [&>svg]:w-5 [&>svg]:h-5 [&>svg]:block">
-      {s.icon}
-    </span>
+          {/* Contact — pushed right, fixed width */}
+          {(contact?.addressLines?.length || contact?.phone?.value || contact?.email?.value) && (
+            <div className="md:basis-[320px] md:flex-none md:ml-auto">
+              <div className="mb-3 text-[18px] font-[600] leading-[32px] font-poppins bg-gradient-to-r from-[#655DF4] to-[#986DD0] bg-clip-text text-transparent">
+                Contact Us
+              </div>
 
-    <span className="w-[137px] text-bright-soft font-poppins text-[16px] font-normal leading-normal">
-      {s.label}
-    </span>
-  </Link>
-</li>
+              <div className="space-y-[14px] text-[16px] font-poppins font-normal leading-[20px] text-white">
+                <div className="flex items-start gap-[12px]">
+                  <IcMapPin className="w-[28px] h-[28px] aspect-square fill-[#975EE1]" />
+                  <address className="not-italic">
+                    275/3, New Kandy Road,<br />Biyagama, Sri Lanka.
+                  </address>
+                </div>
 
-      ))}
-    </ul>
-  </div>
-)}
+                <div className="flex items-center gap-[12px]">
+                  <IcPhone className="w-[28px] h-[28px] aspect-square fill-[#975EE1]" />
+                  <Link href="tel:+94783640894">+94 78364 0894</Link>
+                </div>
 
-
-          {/* Contact */}
-          {(contact?.addressLines?.length ||
-            contact?.phone?.value ||
-            contact?.email?.value) && (
-            <div className="md:col-span-3">
-  <div
-    className="mb-3 text-[18px] font-[600] leading-[32px] font-poppins bg-gradient-to-r from-[#655DF4] to-[#986DD0] bg-clip-text text-transparent"
-  >
-    Contact Us
-  </div>
-
-  <div className="space-y-4 text-[16px] font-poppins font-normal leading-[20px] text-white">
-    <div className="flex items-start gap-3">
-      <IcMapPin className="w-[28px] h-[28px] aspect-square fill-[#975EE1]" />
-      <address className="not-italic">
-        275/3, New Kandy Road,<br />Biyagama, Sri Lanka.
-      </address>
-    </div>
-
-    <div className="flex items-center gap-3">
-      <IcPhone className="w-[28px] h-[28px] aspect-square fill-[#975EE1]" />
-      <Link href="tel:+94783640894">+94 78364 0894</Link>
-    </div>
-
-    <div className="flex items-center gap-3">
-      <IcMail className="w-[28px] h-[28px] aspect-square fill-[#975EE1]" />
-      <Link href="mailto:teamintrovera@gmail.com">teamintrovera@gmail.com</Link>
-    </div>
-  </div>
-</div>
-
+                <div className="flex items-center gap-[12px]">
+                  <IcMail className="w-[28px] h-[28px] aspect-square fill-[#975EE1]" />
+                  <Link href="mailto:teamintrovera@gmail.com">teamintrovera@gmail.com</Link>
+                </div>
+              </div>
+            </div>
           )}
         </div>
 
-        {showDivider && (
-  <div
-    aria-hidden="true"
-    className="mt-10 h-[2px] w-full max-w-[1296px] mx-auto rounded-full"
-    style={{
-      background:
-        "linear-gradient(90deg, rgba(74, 13, 153, 0.02) 0%, rgba(100, 18, 206, 0.80) 50%, rgba(74, 13, 153, 0.02) 100%)",
-    }}
-  />
-)}
+        {/* Divider & copyright (unchanged) */}
+        {config.showDivider && (
+          <div
+            aria-hidden="true"
+            className="mt-[52px] h-[2px] w-full max-w-[1296px] mx-auto rounded-full"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(74, 13, 153, 0.02) 0%, rgba(100, 18, 206, 0.80) 50%, rgba(74, 13, 153, 0.02) 100%)",
+            }}
+          />
+        )}
 
-
-        {/* Bottom bar */}
-        <div className="mt-4 w-full text-center text-[#797E82] font-poppins text-[16px] font-normal leading-[32px]">
-  {copyright ?? `© ${new Date().getFullYear()} Introvera. All rights reserved.`}
-</div>
+        <div className="mt-[52px] w-full text-center text-[#797E82] font-poppins text-[16px] font-normal leading-[32px]">
+          {copyright ?? `© ${new Date().getFullYear()} Introvera. All rights reserved.`}
+        </div>
       </div>
     </footer>
   );
