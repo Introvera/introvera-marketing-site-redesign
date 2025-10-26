@@ -7,11 +7,11 @@ import { Card, CardBody } from "@heroui/react";
 
 type Project = { id: string; title: string; subtitle: string; bg: string; logo?: string };
 const PROJECTS: Project[] = [
-  { id: "p1", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/logos/schoolify.svg" },
-  { id: "p2", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/logos/schoolify.svg" },
-  { id: "p3", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/logos/schoolify.svg" },
-  { id: "p4", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/logos/schoolify.svg" },
-  { id: "p5", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/logos/schoolify.svg" },
+  { id: "p1", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
+  { id: "p2", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
+  { id: "p3", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
+  { id: "p4", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
+  { id: "p5", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
 ];
 
 export default function Projects() {
@@ -37,6 +37,18 @@ export default function Projects() {
     });
     setActive(best);
   };
+  React.useEffect(() => {
+  const el = scrollerRef.current;
+  if (!el) return;
+  const midCard = el.children[2] as HTMLElement; // middle card index (your default active = 2)
+  if (midCard) {
+    midCard.scrollIntoView({
+      behavior: "auto",
+      inline: "center",
+      block: "nearest",
+    });
+  }
+}, []);
 
   const snapToActive = () => {
     const el = scrollerRef.current;
@@ -107,14 +119,14 @@ export default function Projects() {
         {/* Yellow gradient balls over left & right cards */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-10 overflow-hidden"
+        className="hidden md:block pointer-events-none absolute inset-0 z-10 overflow-hidden"
       >
         {/* Left ball */}
         <div
           className="absolute left-[-200px] top-82 h-[400px] w-[500px] rounded-full opacity-100 blur-[10px]"
           style={{
             background:
-              "radial-gradient(circle at center, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0) 70%)",
+              "radial-gradient(circle at center, rgba(0, 0, 0, 0.65), rgba(0, 255, 0, 0) 70%)",
           }}
         />
         {/* Right ball */}
@@ -174,13 +186,19 @@ export default function Projects() {
                     {/* Title row */}
                     <div className="relative z-10 flex items-center gap-3 p-6">
                       {p.logo && (
-                        <div className="relative h-9 w-9 md:h-10 md:w-10">
-                          <Image src={p.logo} alt={`${p.title} logo`} fill className="object-contain" draggable={false} />
+                        <div className="relative">
+                          <Image 
+                          src={p.logo} 
+                          alt={`${p.title} logo`} 
+                          className="object-contain" 
+                          draggable={false}  
+                          width={80} 
+                          height={80}/>
                         </div>
                       )}
                       <div className="min-w-0">
                         <h3 className="text-xl md:text-2xl font-extrabold tracking-wide">{p.title}</h3>
-                        <p className="text-sm md:text-base text-white/80">{p.subtitle}</p>
+                        <p className="text-sm md:text-base">{p.subtitle}</p>
                       </div>
                     </div>
 
