@@ -1,10 +1,22 @@
-// components/Projects.tsx
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { Card, CardBody } from "@heroui/react";
+import Image, { StaticImageData } from "next/image";
+// ⬇️ extended import (adds modal pieces)
+import {
+  Card,
+  CardBody,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+  Link
+} from "@heroui/react";
 
+/* ─────────────────────────── Card Type (unchanged) ─────────────────────────── */
 type Project = { id: string; title: string; subtitle: string; bg: string; logo?: string };
 const PROJECTS: Project[] = [
   { id: "p1", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
@@ -14,15 +26,210 @@ const PROJECTS: Project[] = [
   { id: "p5", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
 ];
 
+/* ─────────────────────── ▼▼ Modal additions ▼▼ ─────────────────────── */
+// Separate type for modal contents (your structure)
+type Img = string | StaticImageData;
+type ProjectDetail = {
+  title: string;
+  category: string;
+  description: string;
+  src: Img;
+  content: React.ReactNode;
+  link?: string;
+  projectphotos?: Img[];
+};
+
+// Map card.id -> modal content
+const DETAILS: Record<Project["id"], ProjectDetail> = {
+  p1: {
+    title: "Schoolify",
+    category: "Web App",
+    description:
+      "Your all-in-one learning companion, making studying smarter, not harder!",
+    src: "/projects/schoolify/cover.jpg", 
+    content: (
+      <div>
+        Schoolify is a unified digital platform designed to bridge the
+        communication and management gaps in Sri Lankan schools, especially in
+        rural and public education sectors. By centralizing essential school
+        operations, Schoolify empowers teachers, students, and parents to stay
+        connected, informed, and engaged — all from one place. With features
+        like real-time notifications, digital attendance tracking, assignment
+        and grade management, and a centralized school calendar, Schoolify
+        ensures that no student or parent misses critical academic updates. It
+        reduces the administrative burden on educators while increasing parental
+        involvement and student accountability. Through its intuitive interface
+        and resource-sharing capabilities, Schoolify supports high-quality,
+        accessible education by enabling remote access to study materials,
+        progress reports, and school announcements. By streamlining
+        communication and administration, Schoolify helps foster a more
+        inclusive, collaborative, and effective educational ecosystem in Sri
+        Lanka.
+      </div>
+    ),
+    link: "https://facebook.com",
+    projectphotos: [
+      "/projects/schoolifycard.jpg",
+      "/projects/schoolifycard.jpg",
+      "/projects/schoolifycard.jpg",
+    ],
+  },
+  // Fill these with each project's unique content as you have it:
+  p2: {
+    title: "Schoolify",
+    category: "Web App",
+    description:
+      "Your all-in-one learning companion, making studying smarter, not harder!",
+    src: "/projects/schoolify/cover.jpg", 
+    content: (
+      <div>
+        Schoolify is a unified digital platform designed to bridge the
+        communication and management gaps in Sri Lankan schools, especially in
+        rural and public education sectors. By centralizing essential school
+        operations, Schoolify empowers teachers, students, and parents to stay
+        connected, informed, and engaged — all from one place. With features
+        like real-time notifications, digital attendance tracking, assignment
+        and grade management, and a centralized school calendar, Schoolify
+        ensures that no student or parent misses critical academic updates. It
+        reduces the administrative burden on educators while increasing parental
+        involvement and student accountability. Through its intuitive interface
+        and resource-sharing capabilities, Schoolify supports high-quality,
+        accessible education by enabling remote access to study materials,
+        progress reports, and school announcements. By streamlining
+        communication and administration, Schoolify helps foster a more
+        inclusive, collaborative, and effective educational ecosystem in Sri
+        Lanka.
+      </div>
+    ),
+    link: "https://facebook.com",
+    projectphotos: [
+      "/projects/schoolifycard.jpg",
+      "/projects/schoolifycard.jpg",
+      "/projects/schoolifycard.jpg",
+    ],
+  },
+  p3: {
+    title: "Schoolify",
+    category: "Web App",
+    description:
+      "Your all-in-one learning companion, making studying smarter, not harder!",
+    src: "/projects/schoolify/cover.jpg", 
+    content: (
+      <div>
+        Schoolify is a unified digital platform designed to bridge the
+        communication and management gaps in Sri Lankan schools, especially in
+        rural and public education sectors. By centralizing essential school
+        operations, Schoolify empowers teachers, students, and parents to stay
+        connected, informed, and engaged — all from one place. With features
+        like real-time notifications, digital attendance tracking, assignment
+        and grade management, and a centralized school calendar, Schoolify
+        ensures that no student or parent misses critical academic updates. It
+        reduces the administrative burden on educators while increasing parental
+        involvement and student accountability. Through its intuitive interface
+        and resource-sharing capabilities, Schoolify supports high-quality,
+        accessible education by enabling remote access to study materials,
+        progress reports, and school announcements. By streamlining
+        communication and administration, Schoolify helps foster a more
+        inclusive, collaborative, and effective educational ecosystem in Sri
+        Lanka.
+      </div>
+    ),
+    link: "https://facebook.com",
+    projectphotos: [
+      "/projects/schoolifycard.jpg",
+      "/projects/schoolifycard.jpg",
+      "/projects/schoolifycard.jpg",
+    ],
+  },
+  p4: {
+    title: "Schoolify",
+    category: "Web App",
+    description:
+      "Your all-in-one learning companion, making studying smarter, not harder!",
+    src: "/projects/schoolify/cover.jpg", 
+    content: (
+      <div>
+        Schoolify is a unified digital platform designed to bridge the
+        communication and management gaps in Sri Lankan schools, especially in
+        rural and public education sectors. By centralizing essential school
+        operations, Schoolify empowers teachers, students, and parents to stay
+        connected, informed, and engaged — all from one place. With features
+        like real-time notifications, digital attendance tracking, assignment
+        and grade management, and a centralized school calendar, Schoolify
+        ensures that no student or parent misses critical academic updates. It
+        reduces the administrative burden on educators while increasing parental
+        involvement and student accountability. Through its intuitive interface
+        and resource-sharing capabilities, Schoolify supports high-quality,
+        accessible education by enabling remote access to study materials,
+        progress reports, and school announcements. By streamlining
+        communication and administration, Schoolify helps foster a more
+        inclusive, collaborative, and effective educational ecosystem in Sri
+        Lanka.
+      </div>
+    ),
+    link: "https://facebook.com",
+    projectphotos: [
+      "/projects/schoolifycard.jpg",
+      "/projects/schoolifycard.jpg",
+      "/projects/schoolifycard.jpg",
+    ],
+  },
+  p5: {
+    title: "Schoolify",
+    category: "Web App",
+    description:
+      "Your all-in-one learning companion, making studying smarter, not harder!",
+    src: "/projects/schoolify/cover.jpg", 
+    content: (
+      <div>
+        Schoolify is a unified digital platform designed to bridge the
+        communication and management gaps in Sri Lankan schools, especially in
+        rural and public education sectors. By centralizing essential school
+        operations, Schoolify empowers teachers, students, and parents to stay
+        connected, informed, and engaged — all from one place. With features
+        like real-time notifications, digital attendance tracking, assignment
+        and grade management, and a centralized school calendar, Schoolify
+        ensures that no student or parent misses critical academic updates. It
+        reduces the administrative burden on educators while increasing parental
+        involvement and student accountability. Through its intuitive interface
+        and resource-sharing capabilities, Schoolify supports high-quality,
+        accessible education by enabling remote access to study materials,
+        progress reports, and school announcements. By streamlining
+        communication and administration, Schoolify helps foster a more
+        inclusive, collaborative, and effective educational ecosystem in Sri
+        Lanka.
+      </div>
+    ),
+    link: "https://facebook.com",
+    projectphotos: [
+      "/projects/schoolifycard.jpg",
+      "/projects/schoolifycard.jpg",
+      "/projects/schoolifycard.jpg",
+    ],
+  },
+};
+/* ─────────────────────── ▲▲ Modal additions ▲▲ ─────────────────────── */
+
 export default function Projects() {
   const scrollerRef = React.useRef<HTMLDivElement | null>(null);
   const [active, setActive] = React.useState(2);
 
-  // pointer-drag state
+  // pointer-drag state (unchanged)
   const dragging = React.useRef(false);
   const startX = React.useRef(0);
   const startScrollLeft = React.useRef(0);
   const pointerId = React.useRef<number | null>(null);
+
+  // ▼▼ Modal state (new)
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [modalSize] = React.useState<"5xl">("5xl");
+  const [selectedId, setSelectedId] = React.useState<Project["id"] | null>(null);
+  const selected = selectedId ? DETAILS[selectedId] : null;
+
+  const openFor = (id: Project["id"]) => {
+    setSelectedId(id);
+    onOpen();
+  };
 
   const updateActiveOnScroll = () => {
     const el = scrollerRef.current;
@@ -39,18 +246,18 @@ export default function Projects() {
   };
   
   React.useEffect(() => {
-  const el = scrollerRef.current;
-  if (!el) return;
+    const el = scrollerRef.current;
+    if (!el) return;
 
-  // Get the middle card
-  const midCard = el.children[2] as HTMLElement;
-  if (midCard) {
-    // Scroll horizontally to center it without affecting page scroll
-    const scrollLeft =
-      midCard.offsetLeft - (el.clientWidth - midCard.clientWidth) / 2;
-    el.scrollLeft = scrollLeft;
-  }
-}, []);
+    // Get the middle card
+    const midCard = el.children[2] as HTMLElement;
+    if (midCard) {
+      // Scroll horizontally to center it without affecting page scroll
+      const scrollLeft =
+        midCard.offsetLeft - (el.clientWidth - midCard.clientWidth) / 2;
+      el.scrollLeft = scrollLeft;
+    }
+  }, []);
 
   const snapToActive = () => {
     const el = scrollerRef.current;
@@ -102,7 +309,7 @@ export default function Projects() {
         bg-[url('/backgrounds/aboutus.png')] bg-cover bg-center
         "
     >
-    <section className="relative w-full py-16 md:py-20">
+        <section className="relative w-full py-16 md:py-20">
       {/* Header */}
       <div className="mx-auto max-w-6xl px-4 text-center select-none">
         <h2 className="text-[28px] md:text-4xl font-extrabold tracking-wide">
@@ -161,14 +368,20 @@ export default function Projects() {
             return (
               <div key={p.id} className="snap-center shrink-0 my-20" style={{ width: "min(88vw, 660px)" }}>
                 
-                <Card
-                  className={[
-                    "relative h-[360px] md:h-[400px] rounded-2xl border border-white/10 overflow-hidden",
-                    "transition-all duration-300",
-                    isActive
-                    ? "scale-[1.02] ring-(--color-gradient-ball) shadow-[0_0_70px_-20px_var(--color-gradient-ball)]"
-                    : "opacity-100",
-                  ].join(" ")}
+                <Card 
+                as="div" 
+                isPressable
+                  /* ▼ Open modal only if not dragging */
+                  onPress={() => {
+                    if (!dragging.current) openFor(p.id);
+                  }}
+                className={[
+                  "relative h-[360px] md:h-[400px] rounded-2xl border border-white/10 overflow-hidden",
+                  "transition-all duration-300",
+                  isActive
+                  ? "scale-[1.02] ring-(--color-gradient-ball) shadow-[0_0_70px_-20px_var(--color-gradient-ball)]"
+                  : "opacity-100",
+                ].join(" ")}
                   onDragStart={(e) => e.preventDefault()} // stop ghost-drag
                 >
                   <CardBody className="p-0 overflow-hidden">
@@ -229,6 +442,68 @@ export default function Projects() {
         }
       `}</style>
     </section>
+
+    {/* ─────────────── Modal (5xl) — reads from DETAILS[selectedId] ─────────────── */}
+    <Modal isOpen={isOpen} size={modalSize} scrollBehavior="outside" onClose={() => { setSelectedId(null); onClose(); }} backdrop="blur">
+      <ModalContent>
+        {(onCloseInner) => (
+          <>
+            <ModalHeader className="flex items-center gap-3">
+              <div>
+                <h1 className="md:text-4xl text-2xl">
+                  {selected?.title}
+                </h1>
+                <p className="text-sm md:text-xl">
+                  {selected?.category}
+                </p>
+              </div>
+            </ModalHeader>
+
+            <ModalBody>
+              {selected && (
+                <div className="space-y-6">
+                  {selected.projectphotos && selected.projectphotos.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {selected.projectphotos.map((src, idx) => (
+                        <div key={idx} className="relative w-full h-48 rounded-xl overflow-hidden">
+                          <Image
+                            src={src}
+                            alt={`Project photo ${idx + 1}`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <h4>{selected.description}</h4>
+                  <p>{selected.content}</p>
+                </div>
+              )}
+            </ModalBody>
+
+            <ModalFooter className="flex justify-between items-center">
+              {selected?.link && (
+                <Link
+                  isBlock
+                  showAnchorIcon
+                  color="secondary"
+                  href={selected.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit Project
+                </Link>
+              )}
+              <Button variant="light" color="danger" onPress={onCloseInner}>
+                Close
+              </Button>
+            </ModalFooter>
+          </>
+        )}
+      </ModalContent>
+    </Modal>
     </section>
   );
 }
