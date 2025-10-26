@@ -37,10 +37,13 @@ const IcLinkedIn = (p: any) => (
   </svg>
 );
 const IcInstagram = (p: any) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
-    <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.6.5.66.26 1.22.61 1.77 1.16.55.55.9 1.11 1.16 1.77.26.65.45 1.43.5 2.6.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.5 2.6a4.6 4.6 0 0 1-1.16 1.77 4.6 4.6 0 0 1-1.77 1.16c-.65.26-1.43.45-2.6.5-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.6-.5a4.6 4.6 0 0 1-1.77-1.16 4.6 4.6 0 0 1-1.16-1.77c-.26-.65-.45-1.43-.5-2.6C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.95.5-2.6.26-.66.61-1.22 1.16-1.77.55-.55 1.11-.9 1.77-1.16.65-.26 1.43-.45 2.6-.5C8.42 2.17 8.8 2.16 12 2.16zm0 3.36a4.48 4.48 0 1 1 0 8.96 4.48 4.48 0 0 1 0-8.96z" />
+  <svg viewBox="0 0 24 24" aria-hidden="true" {...p}>
+    <rect x="2.25" y="2.25" width="19.5" height="19.5" rx="5" fill="none" stroke="currentColor" strokeWidth="1.8" />
+    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.8" />
+    <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" />
   </svg>
 );
+
 const IcGitHub = (p: any) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
     <path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56v-2.2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.26 3.4.96.11-.76.4-1.26.72-1.55-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.3 1.2-3.11-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.19.92-.26 1.9-.39 2.88-.4.98 0 1.96.14 2.88.4 2.2-1.5 3.17-1.19 3.17-1.19.63 1.65.23 2.87.11 3.17.75.8 1.2 1.85 1.2 3.11 0 4.44-2.69 5.41-5.26 5.7.41.36.77 1.06.77 2.13v3.16c0 .31.21.68.79.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z" />
@@ -68,17 +71,17 @@ export const defaultFooterConfig: FooterConfig = {
   blurb:
     "Empowering businesses with intelligent, scalable, and secure software solutions. We build with passion and purpose for the digital future.",
   quickLinks: [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Projects", href: "/projects" },
-    { label: "Testimonials", href: "/testimonials" },
+    { label: "Home", href: "#hero" },
+    { label: "About Us", href: "#aboutus" },
+    { label: "Services", href: "#services" },
+    { label: "Projects", href: "#projects" },
+    { label: "Testimonials", href: "#testimonials" },
   ],
   socials: [
-    { label: "Facebook", href: "https://facebook.com", icon: <IcFacebook className="size-5" /> },
-    { label: "LinkedIn", href: "https://linkedin.com", icon: <IcLinkedIn className="size-5" /> },
-    { label: "Instagram", href: "https://instagram.com", icon: <IcInstagram className="size-5" /> },
-    { label: "GitHub", href: "https://github.com", icon: <IcGitHub className="size-5" /> },
+    { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61577711031531", icon: <IcFacebook className="size-5" /> },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/introvera", icon: <IcLinkedIn className="size-5" /> },
+    { label: "Instagram", href: "https://www.instagram.com/team_introvera/", icon: <IcInstagram className="size-5" /> },
+    { label: "GitHub", href: "https://github.com/Introvera", icon: <IcGitHub className="size-5" /> },
   ],
   contact: {
     addressLines: ["275/3, New Kandy Road,", "Biyagama, Sri Lanka."],
