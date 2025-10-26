@@ -6,6 +6,7 @@ import ServicesGrid from "./component/Ourservice";
 import Testimonials from "./component/testimonials-component/testimonials";
 import WhyChooseUs from "./component/WhyChooseUs";
 import Projects from "./component/Projects";
+import Contactus from "./component/Contactus";
 export default function Home() {
   return (
       <>
@@ -15,6 +16,7 @@ export default function Home() {
       <ServicesGrid />
       <Projects />
       <Testimonials/>
+      <Contactus />
       </>
   );
 }
