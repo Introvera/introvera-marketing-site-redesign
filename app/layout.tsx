@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Saira, Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from "../app/provider";
+import Footer from "@/app/component/footer-component/footer";
+
 
 const saira = Saira({
   variable: "--font-saira",
@@ -42,6 +44,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Providers>{children}</Providers>
+        <Footer />
       </body>
     </html>
   );
