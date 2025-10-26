@@ -37,16 +37,18 @@ export default function Projects() {
     });
     setActive(best);
   };
+  
   React.useEffect(() => {
   const el = scrollerRef.current;
   if (!el) return;
-  const midCard = el.children[2] as HTMLElement; // middle card index (your default active = 2)
+
+  // Get the middle card
+  const midCard = el.children[2] as HTMLElement;
   if (midCard) {
-    midCard.scrollIntoView({
-      behavior: "auto",
-      inline: "center",
-      block: "nearest",
-    });
+    // Scroll horizontally to center it without affecting page scroll
+    const scrollLeft =
+      midCard.offsetLeft - (el.clientWidth - midCard.clientWidth) / 2;
+    el.scrollLeft = scrollLeft;
   }
 }, []);
 
