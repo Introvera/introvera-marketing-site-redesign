@@ -7,9 +7,10 @@ const Hero: React.FC = () => {
   return (
     <section
   id="hero"
-  className="relative flex flex-col  min-h-screen overflow-hidden"
+  className="relative flex flex-col min-h-[600px] sm:min-h-[700px] md:min-h-[720px] lg:min-h-screen overflow-hidden"
   style={{
-    backgroundImage: "url('/backgrounds/hero-bg.png'), radial-gradient(circle at top right, rgba(85, 33, 181, 0.15), rgba(0, 0, 0, 0.95))",
+    backgroundImage:
+      "url('/backgrounds/hero-bg.png'), radial-gradient(circle at top right, rgba(85, 33, 181, 0.15), rgba(0, 0, 0, 0.95))",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

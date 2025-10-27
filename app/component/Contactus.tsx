@@ -149,7 +149,7 @@ const ContactUs = () => {
 
               {/* Map */}
               <div className="mt-5 w-full rounded-[16px] p-[3px] bg-[linear-gradient(145deg,#320073,#350178)] flex-1">
-                <div className="rounded-[14px] overflow-hidden h-[460px]">
+                <div className="rounded-[14px] overflow-hidden h-[300px] sm:h-[380px] md:h-[460px]">
                   <iframe
                     title="Introvera Location"
                     src="https://www.google.com/maps?q=6.949028,79.991667&output=embed"
