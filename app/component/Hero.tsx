@@ -7,9 +7,10 @@ const Hero: React.FC = () => {
   return (
     <section
   id="hero"
-  className="relative flex flex-col  min-h-screen overflow-hidden"
+  className="relative flex flex-col min-h-[600px] sm:min-h-[700px] md:min-h-[720px] lg:min-h-screen overflow-hidden"
   style={{
-    backgroundImage: "url('/backgrounds/hero-bg.png'), radial-gradient(circle at top right, rgba(85, 33, 181, 0.15), rgba(0, 0, 0, 0.95))",
+    backgroundImage:
+      "url('/backgrounds/hero-bg.png'), radial-gradient(circle at top right, rgba(85, 33, 181, 0.15), rgba(0, 0, 0, 0.95))",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -49,13 +50,13 @@ const Hero: React.FC = () => {
 
 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
   {/* Left Gradient Button */}
-  <button className="w-[140px] sm:w-[174px] h-[50px] sm:h-[56px] rounded-full bg-gradient-to-r from-[#4C01AE] to-[#B38CFF] text-white font-semibold text-sm hover:opacity-90 transition">
+  <button className="w-[140px] sm:w-[174px] h-[50px] sm:h-[56px] rounded-full bg-gradient-to-r from-[#4C01AE] to-[#B38CFF] text-white font-semibold text-lg hover:opacity-90 transition">
     Get Started
   </button>
 
   {/* Right Gradient Border Button */}
   <div className="rounded-full bg-gradient-to-l from-[#4C01AE] to-[#B38CFF] p-[2px] w-[140px] sm:w-[174px] h-[50px] sm:h-[56px]">
-    <button className="w-full h-full rounded-full border-2 border-transparent bg-black text-white font-semibold text-sm hover:bg-[#4C01AE]/20 transition">
+    <button className="w-full h-full rounded-full border-2 border-transparent bg-black text-white font-semibold text-lg hover:bg-[#4C01AE]/20 transition">
       View Our Work
     </button>
   </div>
