@@ -39,13 +39,13 @@ const ContactUs = () => {
       });
 
       if (response.ok) {
-        setStatus("✅ Message sent!");
+        setStatus("Message sent!");
         formRef.current.reset();
       } else {
         throw new Error("Failed to send message.");
       }
     } catch (err) {
-      setStatus("❌ Failed to send. Please try again.");
+      setStatus("Failed to send. Please try again.");
     }
   };
 
@@ -169,12 +169,12 @@ const ContactUs = () => {
 
             {/* RIGHT SIDE - CONTACT FORM */}
             <div className="flex flex-col flex-1 gap-9 h-full">
-              <h3 className="text-2xl font-semibold">Send us a message</h3>
+              <h3 className="text-xl font-semibold">Send us a message</h3>
 
               <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4 w-full h-full">
                 {/* Name */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="text-sm font-medium text-gray-200">
+                  <label className="text-base font-medium text-gray-200">
                     <p>Your Name</p>
                   </label>
                   <input
@@ -195,7 +195,7 @@ const ContactUs = () => {
 
                 {/* Email */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="text-sm font-medium text-gray-200">
+                  <label className="ext-base font-medium text-gray-200">
                     <p>Your Email</p>
                   </label>
                   <input
@@ -216,7 +216,7 @@ const ContactUs = () => {
 
                 {/* Message */}
                 <div className="flex flex-col gap-2 w-full flex-1">
-                  <label className="text-sm font-medium text-gray-200">
+                  <label className="ext-base font-medium text-gray-200">
                     <p>Your Message</p>
                   </label>
                   <textarea
@@ -235,15 +235,21 @@ const ContactUs = () => {
                 </div>
 
                 <button
-                  type="submit"
-                  className="
-                    bg-gradient-to-r from-purple-500 to-blue-700 
-                    text-white py-3 px-6 rounded-md font-semibold w-full
-                    hover:opacity-90 transition
-                  "
-                >
-                  Send Message
-                </button>
+  type="submit"
+  className="
+    flex justify-center items-center gap-2
+    h-[56px] py-[10px] px-[20px]
+    rounded-full
+    bg-gradient-to-r from-[#4C01AE] to-[#B38CFF]
+    w-full
+    flex-shrink-0
+    font-semibold text-white
+    hover:opacity-90 transition
+  "
+>
+  Send Message
+</button>
+
                 {status && <p className="text-center mt-2 text-gray-300">{status}</p>}
               </form>
             </div>
