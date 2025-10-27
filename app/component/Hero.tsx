@@ -5,9 +5,9 @@ import Navbar from "../component/Navbar";
 
 const Hero: React.FC = () => {
   return (
-    <section
+   <section
   id="hero"
-  className="relative flex flex-col min-h-[600px] sm:min-h-[700px] md:min-h-[720px] lg:min-h-screen overflow-hidden"
+  className="relative -mt-[68px] flex flex-col min-h-[600px] sm:min-h-[700px] md:min-h-[720px] lg:min-h-screen overflow-hidden"
   style={{
     backgroundImage:
       "url('/backgrounds/hero-bg.png'), radial-gradient(circle at top right, rgba(85, 33, 181, 0.15), rgba(0, 0, 0, 0.95))",
@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
     backgroundRepeat: "no-repeat",
   }}
 >
-    <Navbar />
+
       {/* Text content */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}

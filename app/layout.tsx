@@ -3,6 +3,8 @@ import { Saira, Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from "../app/provider";
 import Footer from "@/app/component/footer-component/footer";
+import Navbar from "./component/Navbar";
+
 
 
 const saira = Saira({
@@ -43,6 +45,7 @@ export default function RootLayout({
       <body
         suppressHydrationWarning
       >
+       <Navbar />
         <Providers>{children}</Providers>
         <Footer />
       </body>

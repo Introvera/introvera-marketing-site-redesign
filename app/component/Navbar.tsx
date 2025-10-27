@@ -110,7 +110,8 @@ const Navbar: React.FC = () => {
   initial={{ y: 0 }}
   animate={{ y: showNavbar ? 0 : -100 }}
   transition={{ duration: 0.3, ease: "easeInOut" }}
-  className="sticky top-0 z-50 w-full flex items-center justify-between h-[68px] px-4 sm:px-6 lg:px-24 bg-gradient-to-r from-[#141414]/20 via-[#343434]/20 to-[#141414]/20 border-b border-gray-800"
+  className="sticky top-0 z-50 w-full flex items-center justify-between h-[68px] px-4 sm:px-6 lg:px-24 bg-black/20 backdrop-blur-md border-b border-gray-800"
+
 >
 
       <div className="container mx-auto relative lg:text-sm w-full">
