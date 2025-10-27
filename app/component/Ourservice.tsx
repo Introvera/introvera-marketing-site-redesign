@@ -23,7 +23,7 @@ const services: Service[] = [
     title: "WEB & MOBILE APP DEVELOPMENT",
     description:
       "Fast, modern, and user-centric applications built for performance and scale, delivering seamless native and cross-platform experiences with clean UIs and robust backends.",
-    image: "/backgrounds/Web.png",
+    image: "https://kzpotlpfxxhmtzvmvbxr.supabase.co/storage/v1/object/sign/marketingSiteImgs/OurServicesImgs/web.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mYTNiOGMwMi1kNDIwLTQ1ZGEtOTZjMi1mYzI5ZWZmYjQ0ZDAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXJrZXRpbmdTaXRlSW1ncy9PdXJTZXJ2aWNlc0ltZ3Mvd2ViLnBuZyIsImlhdCI6MTc2MTU3MzQ1MCwiZXhwIjozMTcxMjE1NzM0NTB9.VWiLt-jkjfSl9B7Hu1w9GQQ65j6HlNaBrpjri7K7u78",
     imageMobile: "/backgrounds/webmobile.png",
     mdSpan: "md:col-span-2 md:row-span-2",
     posMd: "top-10 left-6", // ✅ moved text to left
@@ -132,6 +132,7 @@ export default function ServicesGrid() {
               alt={s.title}
               fill
               priority={i < 2}
+              unoptimized
               sizes="(max-width: 767px) 0px, (max-width: 1279px) 25vw, 25vw"
               className="hidden md:block object-cover transition-transform duration-700 group-hover:scale-105"
             />
