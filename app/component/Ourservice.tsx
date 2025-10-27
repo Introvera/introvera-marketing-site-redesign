@@ -145,19 +145,24 @@ export default function ServicesGrid() {
               className="md:hidden object-cover"
             />
 
-            {/* Overlay
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" /> */}
-
             {/* Text block */}
             {s.align === "center" ? (
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
-                <h3 className="font-extrabold leading-tight tracking-wide text-lg md:text-xl">
-                  {s.title}
-                </h3>
-                <p className="text-gray-200/90 text-sm md:text-base max-w-[90%]">
-                  {s.description}
-                </p>
-              </div>
+  <h3
+    className="font-extrabold leading-tight tracking-wide 
+               text-[22px] sm:text-[26px] md:text-[32px]"
+  >
+    {s.title}
+  </h3>
+  <p
+    className="text-gray-200/90 
+               text-[14px] sm:text-[16px] md:text-[18px] 
+               max-w-[90%]"
+  >
+    {s.description}
+  </p>
+</div>
+
             ) : (
               <div
                 className={`
@@ -167,10 +172,10 @@ export default function ServicesGrid() {
                   ${s.align === "right" ? "text-right" : "text-left"}
                 `}
               >
-                <h3 className="font-extrabold leading-tight tracking-wide text-base sm:text-lg md:text-[15px] lg:text-xl">
+                <h3 className="font-extrabold leading-tight tracking-wide text-base sm:text-lg md:text-[15px] lg:text-[32px]">
                   {s.title}
                 </h3>
-                <p className="text-gray-200/90 text-xs sm:text-sm md:text-[13px] lg:text-base">
+                <p className="text-gray-200/90 text-xs sm:text-sm md:text-[13px] lg:text-xs">
                   {s.description}
                 </p>
               </div>
