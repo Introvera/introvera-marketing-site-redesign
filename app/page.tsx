@@ -10,6 +10,7 @@ import Contactus from "./component/Contactus";
 export default function Home() {
   return (
       <>
+      
       <Hero />
       <Aboutus />
       <WhyChooseUs />

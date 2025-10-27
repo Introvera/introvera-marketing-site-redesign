@@ -306,7 +306,7 @@ export default function Projects() {
     <section id="projects"
       className="
         relative w-full
-        bg-[url('/backgrounds/aboutus.png')] bg-cover bg-center
+         bg-cover bg-center
         "
     >
         <section className="relative w-full py-16 md:py-20">
