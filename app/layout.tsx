@@ -18,7 +18,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Introvera - Innovating Tomorrow, One Line of Code at a Time",
+  title: "Introvera",
   description: "Empowering businesses with intelligent, scalable, and secure software solutions. We build with passion and purpose for the digital future.",
 };
 
