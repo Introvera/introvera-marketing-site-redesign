@@ -143,7 +143,7 @@ const ContactUs = () => {
                 </svg>
 
                 <p className="text-gray-200 text-lg max-w-[80%]">
-                  275/3, New Kandy Road, Biyagama.
+                  275/3, New Kandy Road, Biyagama,Sri Lanka.
                 </p>
               </div>
 
