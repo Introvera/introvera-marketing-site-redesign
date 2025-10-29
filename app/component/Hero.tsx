@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {/* Left Gradient Button */}
           <a href="#contact" className="scroll-smooth">
-  <button className="w-[140px] sm:w-[174px] h-[50px] sm:h-[56px] rounded-full bg-gradient-to-r from-[#4C01AE] to-[#B38CFF] text-white font-semibold text-base sm:text-lg hover:opacity-90 transition">
+  <button className="w-[140px] sm:w-[174px] h-[50px] sm:h-[56px] rounded-full bg-gradient-to-r from-[#4C01AE] to-[#B38CFF] text-white font-semibold text-base sm:text-lg hover:opacity-90 transition cursor-pointer">
     Get Started
   </button>
 </a>
@@ -52,8 +52,8 @@ const Hero: React.FC = () => {
           
 
           {/* Right Gradient Border Button */}
-          <a href="#projects" className="rounded-full bg-gradient-to-l from-[#4C01AE] to-[#B38CFF] p-[2px] w-[140px] sm:w-[174px] h-[50px] sm:h-[56px]">
-  <button className="w-full h-full rounded-full border-2 border-transparent bg-black text-white font-semibold text-base sm:text-lg hover:bg-[#4C01AE]/20 transition">
+          <a href="#projects" className="rounded-full bg-gradient-to-l from-[#4C01AE] to-[#B38CFF] p-[2px] w-[140px] sm:w-[174px] h-[50px] sm:h-[56px] ">
+  <button className="w-full h-full rounded-full border-2 border-transparent bg-black text-white font-semibold text-base sm:text-lg hover:bg-[#4C01AE]/20 transition cursor-pointer">
     View Our Work
   </button>
 </a>

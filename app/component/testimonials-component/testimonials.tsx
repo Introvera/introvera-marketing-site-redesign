@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-/* ─────────────────────────── Types & data ─────────────────────────── */
+/* ─────────────────────────── Types & Data ─────────────────────────── */
 type Testimonial = {
   id: string;
   name: string;
@@ -11,7 +11,6 @@ type Testimonial = {
   avatar?: string;
 };
 
-// Demo data — you can replace freely
 const ITEMS: Testimonial[] = [
   {
     id: "t1",
@@ -20,7 +19,7 @@ const ITEMS: Testimonial[] = [
     quote:
       "Introvera moved us from concept to launch smoothly. Communication was clear and the deliverables matched exactly what we designed in Figma.",
     avatar:
-      "/backgrounds/testimonials/John%20Doe%20Testimonial.png", // default/fallback avatar
+      "/backgrounds/testimonials/John%20Doe%20Testimonial.png",
   },
   {
     id: "t2",
@@ -69,41 +68,40 @@ const ITEMS: Testimonial[] = [
   },
 ];
 
-/* ─────────────────────────── Card (visual unchanged) ─────────────────────────── */
-
-const cardBase =
-  "relative flex flex-col justify-between h-[362px] rounded-[20px] bg-black/[0.28] backdrop-blur px-5 pt-4 pb-5 " +
-  "shadow-[0_20px_60px_rgba(0,0,0,0.35)] " +
-  "border border-[rgba(76,1,174,0.28)]";
-function Card({ t }: { t: Testimonial }) {
+/* ─────────────────────────── Card ─────────────────────────── */
+const Card = ({ t }: { t: Testimonial }) => {
   return (
-    <article className={cardBase}>
+    <article
+      className="relative flex flex-col justify-between rounded-[20px] backdrop-blur px-5 pt-4 pb-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)] border border-[rgba(76,1,174,0.28)] bg-black/[0.28]
+      h-[200px] sm:h-[320px] md:h-[362px]"
+    >
       {/* Header */}
-      <div className="flex items-center gap-[19px]">
-        <div className="relative h-[60px] w-[60px] overflow-hidden rounded-full bg-white/10">
-          {t.avatar ? (
+      <div className="flex items-center gap-[14px]">
+        <div className="relative overflow-hidden rounded-full bg-white/10
+          h-[50px] sm:h-[55px] md:h-[60px] w-[50px] sm:w-[55px] md:w-[60px]">
+          {t.avatar && (
             <Image
               src={t.avatar}
               alt={t.name}
               fill
-              sizes="60px"
+              sizes="(max-width: 640px) 50px, (max-width: 768px) 55px, 60px"
               className="object-cover"
             />
-          ) : null}
+          )}
         </div>
         <div className="min-w-0">
-          <p className="text-bright text-[20px] leading-[28px] font-semibold">
-  {t.name}
-</p>
-<p className="text-bright-soft text-[14px] leading-[19.6px]">
-  {t.role}
-</p>
+          <p className="text-bright font-semibold text-[16px] sm:text-[18px] md:text-[20px] leading-[20px] sm:leading-[24px] md:leading-[28px]">
+            {t.name}
+          </p>
+          <p className="text-bright-soft text-[12px] sm:text-[13px] md:text-[14px] leading-[16px] sm:leading-[18px] md:leading-[19.6px]">
+            {t.role}
+          </p>
         </div>
       </div>
 
-      {/* 1px gradient divider */}
+      {/* Gradient divider */}
       <div
-        className="mt-4 mb-4 h-px w-[366px] max-w-full"
+        className="mt-4 mb-4 h-px w-full"
         style={{
           background:
             "linear-gradient(90deg, rgba(123,22,255,0.04) 0%, #7B16FF 50%, rgba(123,22,255,0.04) 100%)",
@@ -111,19 +109,19 @@ function Card({ t }: { t: Testimonial }) {
       />
 
       {/* Body */}
-      <p className="text-bright-soft h-[221px] overflow-hidden text-white text-[16px] leading-[22.4px]">
+      <p
+        className="text-white overflow-hidden
+        line-clamp-5 sm:line-clamp-6 md:line-clamp-none
+        text-[14px] sm:text-[15px] md:text-[16px] leading-[20px] sm:leading-[22px] md:leading-[22.4px] 
+        h-[140px] sm:h-[170px] md:h-[221px]"
+      >
         “{t.quote}”
       </p>
     </article>
   );
-}
+};
 
-/* ─────────────────────────── Layout only ───────────────────────────
-   - Site padding @ lg = 96px (px-24)
-   - 32px gap under heading (mt-8)
-   - Extra headroom inside grid (pt-12/pb-12)
-   - Middle column lifted by 48px (-mt-12)
-*/
+/* ─────────────────────────── Layout ─────────────────────────── */
 export default function Testimonials({ items = ITEMS }: { items?: Testimonial[] }) {
   const col1 = items.filter((_, i) => i % 3 === 0);
   const col2 = items.filter((_, i) => i % 3 === 1);
@@ -131,58 +129,61 @@ export default function Testimonials({ items = ITEMS }: { items?: Testimonial[] 
 
   return (
     <section
-    id="testimonials"
-    className="relative w-full py-16 sm:py-20 lg:py-24 overflow-hidden"
+      id="testimonials"
+      className="relative w-full py-12 sm:py-12 lg:py-18 overflow-hidden"
     >
-    {/* Full-width background (covers heading + cards) */}
-    <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
+      {/* Background */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <Image
-  src="https://kzpotlpfxxhmtzvmvbxr.supabase.co/storage/v1/object/sign/marketingSiteImgs/testimonialsImgs/GradientBehindTestimonials.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mYTNiOGMwMi1kNDIwLTQ1ZGEtOTZjMi1mYzI5ZWZmYjQ0ZDAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXJrZXRpbmdTaXRlSW1ncy90ZXN0aW1vbmlhbHNJbWdzL0dyYWRpZW50QmVoaW5kVGVzdGltb25pYWxzLnBuZyIsImlhdCI6MTc2MTU3MTQzOCwiZXhwIjozMzI5NzU3MTQzOH0.0nmB_c3O1OHRavNQB6DQdp5sp8yJbMAFc6m-jCYE5n4"
-  alt="Testimonials background"
-  fill
-  priority
-  sizes="100vw"
-  className="object-cover"
-  unoptimized
-/>
-
+          src="https://kzpotlpfxxhmtzvmvbxr.supabase.co/storage/v1/object/sign/marketingSiteImgs/testimonialsImgs/GradientBehindTestimonials.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mYTNiOGMwMi1kNDIwLTQ1ZGEtOTZjMi1mYzI5ZWZmYjQ0ZDAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXJrZXRpbmdTaXRlSW1ncy90ZXN0aW1vbmlhbHNJbWdzL0dyYWRpZW50QmVoaW5kVGVzdGltb25pYWxzLnBuZyIsImlhdCI6MTc2MTU3MTQzOCwiZXhwIjozMzI5NzU3MTQzOH0.0nmB_c3O1OHRavNQB6DQdp5sp8yJbMAFc6m-jCYE5n4"
+          alt="Testimonials background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          unoptimized
+        />
         <div className="absolute inset-0 bg-black/20" />
-    </div>
+      </div>
 
-    {/* Content container (site padding) */}
-    <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-12 lg:px-24">
-        {/* Heading */}
+      {/* Content */}
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-12 lg:px-24">
         <h2 className="text-center text-white text-[28px] sm:text-[32px] font-[600]">
-        STORIES OF{" "}
-        <span className="bg-gradient-to-r from-[#655DF4] via-[#7E65E2] to-[#986DD0] bg-clip-text text-transparent">
+          STORIES OF{" "}
+          <span className="bg-gradient-to-r from-[#655DF4] via-[#7E65E2] to-[#986DD0] bg-clip-text text-transparent">
             TRUST & TRANSFORMATION
-        </span>
+          </span>
         </h2>
 
-        {/* Thin rule – 16px below heading */}
-        {/* <div className="mt-4 h-[3px] w-full bg-gradient-to-r from-transparent via-[#5C7CFF] to-transparent" /> */}
-
-        {/* About 60–75px below rule (adjustable) */}
-        <div className="mt-[96px]">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[14px] items-start">
-            <div className="flex flex-col gap-[14px]">
-            {col1.map((t) => (
-                <Card key={t.id} t={t} />
+        {/* Cards */}
+        <div className="mt-[64px]">
+          {/* Mobile: stacked cards */}
+          <div className="block sm:hidden flex flex-col gap-[14px]">
+            {items.map((t) => (
+              <Card key={t.id} t={t} />
             ))}
+          </div>
+
+          {/* Medium & Large screens: 3 columns */}
+          <div className="hidden sm:grid sm:grid-cols-3 gap-[14px] items-start mt-30">
+            <div className="flex flex-col gap-[14px]">
+              {col1.map((t) => (
+                <Card key={t.id} t={t} />
+              ))}
             </div>
             <div className="flex flex-col gap-[14px] -mt-12">
-            {col2.map((t) => (
+              {col2.map((t) => (
                 <Card key={t.id} t={t} />
-            ))}
+              ))}
             </div>
             <div className="flex flex-col gap-[14px]">
-            {col3.map((t) => (
+              {col3.map((t) => (
                 <Card key={t.id} t={t} />
-            ))}
+              ))}
             </div>
+          </div>
         </div>
-        </div>
-    </div>
+      </div>
     </section>
   );
 }

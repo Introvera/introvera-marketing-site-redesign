@@ -181,12 +181,12 @@ const ContactUs = () => {
                     type="text"
                     name="name"
                     required
-                    placeholder="John Doe"
+                    placeholder="ex : John Doe"
                     className="
                       flex h-[64px] px-6 py-[10px] items-center gap-[10px] self-stretch
                       rounded-[16px] border border-[#975EE1]
                       bg-transparent text-white
-                      placeholder:text-[#975EE1] placeholder:font-[400] placeholder:text-[16px]
+                      placeholder:text-[#975EE1]/50 placeholder:font-[400] placeholder:text-[16px]
                       placeholder:leading-[32px] placeholder:font-poppins
                       focus:ring-2 focus:ring-purple-600 outline-none
                     "
@@ -202,12 +202,12 @@ const ContactUs = () => {
                     type="email"
                     name="email"
                     required
-                    placeholder="johndoe1999@gmail.com"
+                    placeholder="ex : johndoe1999@gmail.com"
                     className="
                       flex h-[64px] px-6 py-[10px] items-center gap-[10px] self-stretch
                       rounded-[16px] border border-[#975EE1]
                       bg-transparent text-white
-                      placeholder:text-[#975EE1] placeholder:font-[400] placeholder:text-[16px]
+                      placeholder:text-[#975EE1]/50 placeholder:font-[400] placeholder:text-[16px]
                       placeholder:leading-[32px] placeholder:font-poppins
                       focus:ring-2 focus:ring-purple-600 outline-none
                     "
@@ -227,7 +227,7 @@ const ContactUs = () => {
                       flex h-[250px] px-6 py-4 items-start gap-[10px] self-stretch
                       rounded-[16px] border border-[#975EE1]
                       bg-transparent text-white
-                      placeholder:text-[#975EE1] placeholder:font-[400] placeholder:text-[16px]
+                      placeholder:text-[#975EE1]/50 placeholder:font-[400] placeholder:text-[16px]
                       placeholder:leading-[32px] placeholder:font-poppins
                       focus:ring-2 focus:ring-purple-600 outline-none resize-none
                     "
