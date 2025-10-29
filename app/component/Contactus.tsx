@@ -71,7 +71,7 @@ const ContactUs = () => {
               rounded-[24px]
               border-[2px] border-[rgba(76,1,174,0.34)]
               bg-[linear-gradient(111deg,rgba(73,73,73,0.30)_0%,rgba(19,19,19,0.30)_60.23%,rgba(73,73,73,0.30)_100%)]
-              px-[52px] py-[28px]
+              px-[12px] sm:px-[30px] md:px-[52px] lg:px-[52px] py-[28px]
               items-stretch
             "
           >
