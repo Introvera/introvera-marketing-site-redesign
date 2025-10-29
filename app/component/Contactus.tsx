@@ -181,7 +181,7 @@ const ContactUs = () => {
                     type="text"
                     name="name"
                     required
-                    placeholder="ex : John Doe"
+                    placeholder="eg : John Doe"
                     className="
                       flex h-[64px] px-6 py-[10px] items-center gap-[10px] self-stretch
                       rounded-[16px] border border-[#975EE1]
@@ -202,7 +202,7 @@ const ContactUs = () => {
                     type="email"
                     name="email"
                     required
-                    placeholder="ex : johndoe1999@gmail.com"
+                    placeholder="eg : johndoe1999@gmail.com"
                     className="
                       flex h-[64px] px-6 py-[10px] items-center gap-[10px] self-stretch
                       rounded-[16px] border border-[#975EE1]
