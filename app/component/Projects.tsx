@@ -48,7 +48,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
       "Your all-in-one learning companion, making studying smarter, not harder!",
     src: "/projects/schoolify/cover.jpg", 
     content: (
-      <div>
+      <>
         Schoolify is a unified digital platform designed to bridge the
         communication and management gaps in Sri Lankan schools, especially in
         rural and public education sectors. By centralizing essential school
@@ -65,7 +65,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
         communication and administration, Schoolify helps foster a more
         inclusive, collaborative, and effective educational ecosystem in Sri
         Lanka.
-      </div>
+      </>
     ),
     link: "https://facebook.com",
     projectphotos: [
@@ -82,7 +82,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
       "Your all-in-one learning companion, making studying smarter, not harder!",
     src: "/projects/schoolify/cover.jpg", 
     content: (
-      <div>
+      <>
         Schoolify is a unified digital platform designed to bridge the
         communication and management gaps in Sri Lankan schools, especially in
         rural and public education sectors. By centralizing essential school
@@ -99,7 +99,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
         communication and administration, Schoolify helps foster a more
         inclusive, collaborative, and effective educational ecosystem in Sri
         Lanka.
-      </div>
+      </>
     ),
     link: "https://facebook.com",
     projectphotos: [
@@ -115,7 +115,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
       "Your all-in-one learning companion, making studying smarter, not harder!",
     src: "/projects/schoolify/cover.jpg", 
     content: (
-      <div>
+      <>
         Schoolify is a unified digital platform designed to bridge the
         communication and management gaps in Sri Lankan schools, especially in
         rural and public education sectors. By centralizing essential school
@@ -132,7 +132,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
         communication and administration, Schoolify helps foster a more
         inclusive, collaborative, and effective educational ecosystem in Sri
         Lanka.
-      </div>
+      </>
     ),
     link: "https://facebook.com",
     projectphotos: [
@@ -148,7 +148,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
       "Your all-in-one learning companion, making studying smarter, not harder!",
     src: "/projects/schoolify/cover.jpg", 
     content: (
-      <div>
+      <>
         Schoolify is a unified digital platform designed to bridge the
         communication and management gaps in Sri Lankan schools, especially in
         rural and public education sectors. By centralizing essential school
@@ -165,7 +165,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
         communication and administration, Schoolify helps foster a more
         inclusive, collaborative, and effective educational ecosystem in Sri
         Lanka.
-      </div>
+      </>
     ),
     link: "https://facebook.com",
     projectphotos: [
@@ -181,7 +181,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
       "Your all-in-one learning companion, making studying smarter, not harder!",
     src: "/projects/schoolify/cover.jpg", 
     content: (
-      <div>
+      <>
         Schoolify is a unified digital platform designed to bridge the
         communication and management gaps in Sri Lankan schools, especially in
         rural and public education sectors. By centralizing essential school
@@ -198,7 +198,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
         communication and administration, Schoolify helps foster a more
         inclusive, collaborative, and effective educational ecosystem in Sri
         Lanka.
-      </div>
+      </>
     ),
     link: "https://facebook.com",
     projectphotos: [
@@ -366,136 +366,96 @@ export default function Projects() {
           {PROJECTS.map((p, i) => {
             const isActive = i === active;
             return (
-              // <div key={p.id} className="snap-center shrink-0 my-20" style={{ width: "min(88vw, 660px)" }}>
-                
-              //   <Card 
-              //   as="div" 
-              //   isPressable
-              //     /* ▼ Open modal only if not dragging */
-              //     onPress={() => {
-              //       if (!dragging.current) openFor(p.id);
-              //     }}
-              //   className={[
-              //     "relative h-[360px] md:h-[400px] rounded-2xl border border-white/10 overflow-hidden",
-              //     "transition-all duration-300",
-              //     isActive
-              //     ? "scale-[1.02] ring-(--color-gradient-ball) shadow-[0_0_70px_-20px_var(--color-gradient-ball)]"
-              //     : "opacity-100",
-              //   ].join(" ")}
-              //     onDragStart={(e) => e.preventDefault()} // stop ghost-drag
-              //   >
-              //     <CardBody className="p-0 overflow-hidden">
-              //       {/* Background image — not draggable */}
-              //       <div className="absolute inset-0">
-              //         <Image
-              //           src={p.bg}
-              //           alt={`${p.title} preview`}
-              //           fill
-              //           priority={i === 2}
-              //           className="object-cover"
-              //           draggable={false}
-              //         />
-              //         <div className="absolute inset-0 bg-[radial-gradient(80%_100%_at_50%_70%,rgba(0,0,0,0.1),rgba(0,0,0,0.65))]" />
-              //       </div>
-
-              //       {/* Title row */}
-              //       <div className="relative z-10 flex items-center gap-3 p-6">
-              //         {p.logo && (
-              //           <div className="relative">
-              //             <Image 
-              //             src={p.logo} 
-              //             alt={`${p.title} logo`} 
-              //             className="object-contain" 
-              //             draggable={false}  
-              //             width={80} 
-              //             height={80}/>
-              //           </div>
-              //         )}
-              //         <div className="min-w-0">
-              //           <h3 className="text-xl md:text-2xl font-extrabold tracking-wide">{p.title}</h3>
-              //           <p className="text-sm md:text-base">{p.subtitle}</p>
-              //         </div>
-              //       </div>
-
-              //       {/* Center glow only on active */}
-              //       {isActive && (
-              //         <div
-              //           aria-hidden
-              //           className="pointer-events-none absolute -z-10 left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[140px] opacity-60"
-              //           style={{ background: "radial-gradient(closest-side, rgba(122,108,255,0.5), rgba(122,108,255,0) 70%)" }}
-              //         />
-              //       )}
-              //     </CardBody>
-              //   </Card>
-              // </div>
               <div key={p.id} className="snap-center shrink-0 my-20" style={{ width: "min(88vw, 660px)" }}>
-  <Card 
-    as="div" 
-    isPressable
-    onPress={() => {
-      if (!dragging.current) openFor(p.id);
-    }}
-    className={[
-      "relative h-[360px] md:h-[400px] rounded-2xl border border-white/10 overflow-hidden",
-      "transition-all duration-300",
-      isActive
-        ? "scale-[1.05] opacity-100 z-[5] ring-[--color-gradient-ball] shadow-[0_0_80px_-20px_var(--color-gradient-ball)]"
-        : "scale-[0.9] md:scale-[0.92] opacity-70 z-[1]",
-    ].join(" ")}
-    onDragStart={(e) => e.preventDefault()}
-  >
-    <CardBody className="p-0 overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src={p.bg}
-          alt={`${p.title} preview`}
-          fill
-          priority={i === 2}
-          className="object-cover"
-          draggable={false}
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(80%_100%_at_50%_70%,rgba(0,0,0,0.1),rgba(0,0,0,0.65))]" />
-      </div>
+              <Card 
+                as="div" 
+                isPressable
+                onPress={() => {
+                  if (!dragging.current) openFor(p.id);
+                }}
+                className={[
+                  "relative h-[360px] md:h-[400px] rounded-2xl border border-white/10 overflow-hidden",
+                  "transition-all duration-300",
+                  isActive
+                    ? "scale-[1.05] opacity-100 z-[5] ring-[--color-gradient-ball] shadow-[0_0_80px_-20px_var(--color-gradient-ball)]"
+                    : "scale-[0.9] md:scale-[0.92] opacity-70 z-[1]",
+                ].join(" ")}
+                onDragStart={(e) => e.preventDefault()}
+              >
+                <CardBody className="p-0 overflow-hidden">
+                  {/* Background image */}
+                  <div className="absolute inset-0">
+                    <Image
+                      src={p.bg}
+                      alt={`${p.title} preview`}
+                      fill
+                      priority={i === 2}
+                      className="object-cover"
+                      draggable={false}
+                    />
+                    <div className="absolute inset-0 bg-[radial-gradient(80%_100%_at_50%_70%,rgba(0,0,0,0.1),rgba(0,0,0,0.65))]" />
+                  </div>
 
-      {/* Title row */}
-      <div className="relative z-10 flex items-center gap-3 p-6">
-        {p.logo && (
-          <div className="relative">
-            <Image
-              src={p.logo}
-              alt={`${p.title} logo`}
-              className="object-contain"
-              draggable={false}
-              width={80}
-              height={80}
-            />
-          </div>
-        )}
-        <div className="min-w-0">
-          <h3 className="text-xl md:text-2xl font-extrabold tracking-wide">
-            {p.title}
-          </h3>
-          <p className="text-sm md:text-base">{p.subtitle}</p>
-        </div>
-      </div>
+                  {/* Title row */}
+                  <div className="relative z-10 flex items-center gap-3 p-6">
+                    {p.logo && (
+                      <div className="relative">
+                        <Image
+                          src={p.logo}
+                          alt={`${p.title} logo`}
+                          className="object-contain"
+                          draggable={false}
+                          width={80}
+                          height={80}
+                        />
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <h3 className="text-xl md:text-2xl font-extrabold tracking-wide">
+                        {p.title}
+                      </h3>
+                      <p className="text-sm md:text-base">{p.subtitle}</p>
+                    </div>
+                  </div>
 
-      {/* Center glow only on active */}
-      {isActive && (
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -z-10 left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[140px] opacity-60"
-          style={{
-            background:
-              "radial-gradient(closest-side, rgba(122,108,255,0.5), rgba(122,108,255,0) 70%)",
-          }}
-        />
-      )}
-    </CardBody>
-  </Card>
-</div>
+                  {/* Center glow only on active */}
+                  {isActive && (
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute -z-10 left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[140px] opacity-60"
+                      style={{
+                        background:
+                          "radial-gradient(closest-side, rgba(122,108,255,0.5), rgba(122,108,255,0) 70%)",
+                      }}
+                    />
+                  )}
+                </CardBody>
+              </Card>
+            </div>
             );
           })}
+        </div>
+        {/* Dots navigation — only visible on mobile */}
+        <div className="flex justify-center gap-2 mt-4 md:hidden">
+          {PROJECTS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                const el = scrollerRef.current;
+                if (!el) return;
+                (el.children[i] as HTMLElement)?.scrollIntoView({
+                  behavior: "smooth",
+                  inline: "center",
+                  block: "nearest",
+                });
+                setActive(i);
+              }}
+              className={[
+                "w-2 h-2 rounded-full transition-all duration-300",
+                i === active ? "bg-purple-300" : "bg-white/30",
+              ].join(" ")}
+            />
+          ))}
         </div>
       </div>
 
