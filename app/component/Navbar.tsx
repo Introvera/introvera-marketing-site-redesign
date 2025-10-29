@@ -25,21 +25,29 @@ const Navbar: React.FC = () => {
 
   const toggleNavbar = (): void => setMobileDrawerOpen((v) => !v);
 
-  // Hide/Show Navbar on scroll
+  // Hide/Show Navbar on scroll + close drawer if scrolling
   useEffect(() => {
     const handleScroll = (): void => {
       const currentScrollY = window.scrollY;
+
+      // Hide navbar when scrolling down
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setShowNavbar(false);
       } else {
         setShowNavbar(true);
       }
+
+      // Close mobile drawer when user scrolls
+      if (mobileDrawerOpen) {
+        setMobileDrawerOpen(false);
+      }
+
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, mobileDrawerOpen]);
 
   // Extract section IDs from navItems
   const observedIds = useMemo<string[]>(
@@ -107,25 +115,24 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-  initial={{ y: 0 }}
-  animate={{ y: showNavbar ? 0 : -100 }}
-  transition={{ duration: 0.3, ease: "easeInOut" }}
-  className="sticky top-0 z-50 w-full flex items-center justify-between h-[68px] px-4 sm:px-6 lg:px-24 bg-black/20 backdrop-blur-md border-b border-gray-800"
-
->
-
+      initial={{ y: 0 }}
+      animate={{ y: showNavbar ? 0 : -100 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="sticky top-0 z-50 w-full flex items-center justify-between h-[68px] px-4 sm:px-6 lg:px-24 bg-black/20 backdrop-blur-md border-b border-gray-800"
+    >
       <div className="container mx-auto relative lg:text-sm w-full">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             <Image
-              height={25}
-              width={24}
-              className="w-25 mr-2"
-              src="/icons/logocolor.svg"
-              alt="Logo"
-              priority
-            />
+  src="/icons/logocolor.svg"
+  alt="Logo"
+  width={40}       
+  height={40}
+  priority
+  className="mr-2 w-24 h-24 sm:w-26 sm:h-26 md:w-28 md:h-28 lg:w-30 lg:h-30"
+/>
+
           </div>
 
           {/* Desktop Navigation */}
@@ -149,7 +156,7 @@ const Navbar: React.FC = () => {
           </ul>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden md:flex flex-col justify-end">
+          <div className="lg:hidden md:flex flex-col justify-end ">
             <button
               onClick={toggleNavbar}
               aria-label="Toggle menu"
@@ -160,9 +167,9 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Drawer (unchanged) */}
+        {/* Mobile Drawer */}
         {mobileDrawerOpen && (
-          <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
+          <div className="fixed right-0 top-[68px] z-20 bg-black/95 backdrop-blur-lg w-full p-12 flex flex-col justify-center items-center lg:hidden rounded-b-2xl transition-all duration-300">
             <ul className="text-center">
               {navItems.map((item) => {
                 const isActive = activeSection === item.href;
