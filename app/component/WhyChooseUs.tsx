@@ -3,6 +3,93 @@ import React from "react";
 import Image from "next/image";
 import { Card, CardBody } from "@heroui/react";
 
+/* ─────────────────────────── Feature Model ─────────────────────────── */
+type Feature = {
+  id: string;
+  title: string;
+  description: string;
+  icon: string; // icon path under /public/icons
+  bg: string;   // gradient background for the card
+};
+
+/* ─────────────────────────── Feature Data ─────────────────────────── */
+const FEATURES: Feature[] = [
+  {
+    id: "clean-code",
+    title: "CLEAN CODE",
+    description: "We write readable, maintainable code that’s easy to scale.",
+    icon: "/icons/code.png",
+    bg: "linear-gradient(139deg, rgba(0,0,0,0.37) 27.11%, rgba(53,51,51,0.37) 100%)",
+  },
+  {
+    id: "agile-process",
+    title: "AGILE PROCESS",
+    description: "We work in fast, flexible sprints to deliver results quickly.",
+    icon: "/icons/transistor.png",
+    bg: "linear-gradient(139deg, rgba(53,51,51,0.37) 27.11%, rgba(0,0,0,0.37) 60.05%, rgba(0,0,0,0.37) 100%)",
+  },
+  {
+    id: "clear-communication",
+    title: "CLEAR COMMUNICATION",
+    description: "We keep you updated every step of the way, no surprises.",
+    icon: "/icons/wifi.png",
+    bg: "linear-gradient(125deg, rgba(0,0,0,0.37) 76.11%, rgba(53,51,51,0.37) 100%)",
+  },
+  {
+    id: "business-focused",
+    title: "BUSINESS-FOCUSED",
+    description: "Our solutions align with your goals, not just the tech.",
+    icon: "/icons/trade.png",
+    bg: "linear-gradient(160deg, rgba(53,51,51,0.37) 2.6%, rgba(0,0,0,0.37) 96.04%)",
+  },
+  {
+    id: "on-time-delivery",
+    title: "ON-TIME DELIVERY",
+    description: "We plan realistically and hit deadlines without drama.",
+    icon: "/icons/clock.png",
+    bg: "linear-gradient(125deg, rgba(0,0,0,0.37) 76.14%, rgba(53,51,51,0.37) 100%)",
+  },
+  {
+    id: "skilled-team",
+    title: "SKILLED TEAM",
+    description: "Experienced developers, designers, and strategists on every project.",
+    icon: "/icons/people.png",
+    bg: "linear-gradient(232deg, rgba(53,51,51,0.37) 0%, rgba(0,0,0,0.37) 32%)",
+  },
+];
+
+/* ─────────────────────────── Reusable Feature Card ─────────────────────────── */
+function FeatureCard({ feature }: { feature: Feature }) {
+  return (
+    <Card
+      isBlurred
+      shadow="sm"
+      className="rounded-2xl backdrop-blur-xl"
+      style={{ background: feature.bg }}
+    >
+      <CardBody className="p-4 md:p-5">
+        <div className="flex items-center gap-3">
+          <div className="inline-flex h-10 w-10 items-center justify-center rounded-full">
+            <Image
+              src={feature.icon}
+              alt={feature.title}
+              width={60}
+              height={60}
+              className="object-contain"
+              priority
+            />
+          </div>
+          <h2 className="text-lg md:text-2xl font-extrabold tracking-wide uppercase">
+            {feature.title}
+          </h2>
+        </div>
+        <p className="mt-3 leading-6">{feature.description}</p>
+      </CardBody>
+    </Card>
+  );
+}
+
+/* ─────────────────────────── Main Component ─────────────────────────── */
 const WhyChooseUs: React.FC = () => {
   return (
     <section className="relative mx-auto px-4 sm:px-24 lg:px-24">
@@ -47,145 +134,11 @@ const WhyChooseUs: React.FC = () => {
           </p>
         </div>
 
-        {/* grid of 6 explicit cards */}
+        {/* grid of dynamic feature cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {/* 1 — CLEAN CODE */}
-          <Card
-            isBlurred
-            shadow="sm"
-            className="rounded-2xl backdrop-blur-xl"
-            style={{
-            background:
-            "linear-gradient(139deg, rgba(0, 0, 0, 0.37) 27.11%, rgba(53, 51, 51, 0.37) 100%)",
-        }}
-          >
-            <CardBody className="p-4 md:p-5">
-              <div className="flex items-center gap-3">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-full">
-                  <Image src="/icons/code.png" alt="Clean code" width={60} height={60} className="object-contain" priority />
-                </div>
-                <h2 className="text-lg md:text-2xl font-extrabold tracking-wide uppercase">CLEAN CODE</h2>
-              </div>
-              <p className="mt-3 leading-6">
-                We write readable, maintainable code that’s easy to scale.
-              </p>
-            </CardBody>
-          </Card>
-
-          {/* 2 — AGILE PROCESS */}
-          <Card
-            isBlurred
-            shadow="sm"
-            className="rounded-2xl backdrop-blur-xl"
-            style={{
-            background:
-            "linear-gradient(139deg, rgba(53, 51, 51, 0.37) 27.11%, rgba(0, 0, 0, 0.37) 60.05%, rgba(0, 0, 0, 0.37) 100%)",
-        }}
-          >
-            <CardBody className="p-4 md:p-5">
-              <div className="flex items-center gap-3">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-full">
-                  <Image src="/icons/transistor.png" alt="Agile process" width={60} height={60} className="object-contain" priority />
-                </div>
-                <h2 className="text-lg md:text-2xl font-extrabold tracking-wide uppercase">AGILE PROCESS</h2>
-              </div>
-              <p className="mt-3 leading-6">
-                We work in fast, flexible sprints to deliver results quickly.
-              </p>
-            </CardBody>
-          </Card>
-
-          {/* 3 — CLEAR COMMUNICATION */}
-          <Card
-            isBlurred
-            shadow="sm"
-            className="rounded-2xl backdrop-blur-xl"
-            style={{
-            background:
-            "linear-gradient(125deg, rgba(0, 0, 0, 0.37) 76.11%, rgba(53, 51, 51, 0.37) 100%)",
-        }}
-          >
-            <CardBody className="p-4 md:p-5">
-              <div className="flex items-center gap-3">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-full">
-                  <Image src="/icons/wifi.png" alt="Clear communication" width={60} height={60} className="object-contain" priority />
-                </div>
-                <h2 className="text-lg md:text-2xl font-extrabold tracking-wide uppercase">CLEAR COMMUNICATION</h2>
-              </div>
-              <p className="mt-3 leading-6">
-                We keep you updated every step of the way, no surprises.
-              </p>
-            </CardBody>
-          </Card>
-
-          {/* 4 — BUSINESS-FOCUSED */}
-          <Card
-            isBlurred
-            shadow="sm"
-            className="rounded-2xl backdrop-blur-xl"
-            style={{
-            background:
-            "linear-gradient(160deg, rgba(53, 51, 51, 0.37) 2.6%, rgba(0, 0, 0, 0.37) 96.04%)",
-        }}
-          >
-            <CardBody className="p-4 md:p-5">
-              <div className="flex items-center gap-3">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-full">
-                  <Image src="/icons/trade.png" alt="Business-focused" width={60} height={60} className="object-contain" priority />
-                </div>
-                <h2 className="text-lg md:text-2xl font-extrabold tracking-wide uppercase">BUSINESS-FOCUSED</h2>
-              </div>
-              <p className="mt-3 leading-6">
-                Our solutions align with your goals, not just the tech.
-              </p>
-            </CardBody>
-          </Card>
-
-          {/* 5 — ON-TIME DELIVERY */}
-          <Card
-            isBlurred
-            shadow="sm"
-            className="rounded-2xl backdrop-blur-xl"
-            style={{
-            background:
-            "linear-gradient(125deg, rgba(0, 0, 0, 0.37) 76.14%, rgba(53, 51, 51, 0.37) 100%)",
-        }}
-          >
-            <CardBody className="p-4 md:p-5">
-              <div className="flex items-center gap-3">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-full">
-                  <Image src="/icons/clock.png" alt="On-time delivery" width={60} height={60} className="object-contain" priority />
-                </div>
-                <h2 className="text-lg md:text-2xl font-extrabold tracking-wide uppercase">TIME-ON DELIVERY</h2>
-              </div>
-              <p className="mt-3 leading-6">
-                We work in fast, flexible sprints to deliver results quickly.
-              </p>
-            </CardBody>
-          </Card>
-
-          {/* 6 — SKILLED TEAM */}
-          <Card
-            isBlurred
-            shadow="sm"
-            className="rounded-2xl backdrop-blur-xl"
-            style={{
-            background:
-            "linear-gradient(232deg, rgba(53, 51, 51, 0.37) 0%, rgba(0, 0, 0, 0.37) 32%)",
-        }}
-          >
-            <CardBody className="p-4 md:p-5">
-              <div className="flex items-center gap-3">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-full">
-                  <Image src="/icons/people.png" alt="Skilled team" width={60} height={60} className="object-contain" priority />
-                </div>
-                <h2 className="text-lg md:text-2xl font-extrabold tracking-wide uppercase">SKILLED TEAM</h2>
-              </div>
-              <p className="mt-3 leading-6">
-                Experienced developers, designers, and strategists on every project.
-              </p>
-            </CardBody>
-          </Card>
+          {FEATURES.map((feature) => (
+            <FeatureCard key={feature.id} feature={feature} />
+          ))}
         </div>
       </div>
     </section>
@@ -193,4 +146,3 @@ const WhyChooseUs: React.FC = () => {
 };
 
 export default WhyChooseUs;
-
