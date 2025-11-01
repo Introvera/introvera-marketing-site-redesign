@@ -14,30 +14,30 @@ type Testimonial = {
 const ITEMS: Testimonial[] = [
   {
     id: "t1",
-    name: "Aisha Perera",
-    role: "Product Lead",
+    name: "Anushka Eranga",
+    role: "Lead Software Engineer at Creative Software",
     quote:
-      "Introvera moved us from concept to launch smoothly. Communication was clear and the deliverables matched exactly what we designed in Figma.",
+      "What I admire most is these kids' mindset. They approach every idea like engineers test, iterate, refine but they also bring a creative energy that makes their work stand out.",
     avatar:
-      "/backgrounds/testimonials/John%20Doe%20Testimonial.png",
+      "/backgrounds/testimonials/anushka.jpeg",
   },
   {
     id: "t2",
-    name: "Liam Carter",
-    role: "CTO",
+    name: "Sachini Pathinayaka",
+    role: "Lead Software Engineer at IFS",
     quote:
-      "Clean architecture, on-time delivery, and great UI polish. Our web app performance improved significantly after their refactor.",
+      "These kids always been the kind of people who learn fast and build things that actually work. It’s been fun watching them grow as developers.",
     avatar:
-      "/backgrounds/testimonials/John%20Doe%20Testimonial.png",
+      "/backgrounds/testimonials/sachini.jpeg",
   },
   {
     id: "t3",
-    name: "Minali Jay",
-    role: "Founder",
+    name: "Rashen Iddamalgoda",
+    role: "Senior System Engineer at Pristine Solution (Pvt)Ltd",
     quote:
-      "They understood the problem deeply and shipped a reliable MVP fast. The team is responsive and easy to work with.",
+      "I’ve seen how passionate they are about learning and improving. They always push themselves to create something better each time.",
     avatar:
-      "/backgrounds/testimonials/John%20Doe%20Testimonial.png",
+      "/backgrounds/testimonials/rashen.jpg",
   },
   {
     id: "t4",
