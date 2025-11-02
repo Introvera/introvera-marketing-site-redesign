@@ -43,11 +43,11 @@ const IcInstagram = (p: any) => (
     <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" />
   </svg>
 );
-const IcGitHub = (p: any) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
-    <path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56v-2.2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.26 3.4.96.11-.76.4-1.26.72-1.55-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.3 1.2-3.11-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.19.92-.26 1.9-.39 2.88-.4.98 0 1.96.14 2.88.4 2.2-1.5 3.17-1.19 3.17-1.19.63 1.65.23 2.87.11 3.17.75.8 1.2 1.85 1.2 3.11 0 4.44-2.69 5.41-5.26 5.7.41.36.77 1.06.77 2.13v3.16c0 .31.21.68.79.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z" />
-  </svg>
-);
+// const IcGitHub = (p: any) => (
+//   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
+//     <path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56v-2.2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.26 3.4.96.11-.76.4-1.26.72-1.55-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.3 1.2-3.11-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.19.92-.26 1.9-.39 2.88-.4.98 0 1.96.14 2.88.4 2.2-1.5 3.17-1.19 3.17-1.19.63 1.65.23 2.87.11 3.17.75.8 1.2 1.85 1.2 3.11 0 4.44-2.69 5.41-5.26 5.7.41.36.77 1.06.77 2.13v3.16c0 .31.21.68.79.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z" />
+//   </svg>
+// );
 const IcMapPin = (p: any) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
     <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
@@ -80,7 +80,7 @@ export const defaultFooterConfig: FooterConfig = {
     { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61577711031531", icon: <IcFacebook className="size-5" /> },
     { label: "LinkedIn", href: "https://www.linkedin.com/company/introvera", icon: <IcLinkedIn className="size-5" /> },
     { label: "Instagram", href: "https://www.instagram.com/team_introvera/", icon: <IcInstagram className="size-5" /> },
-    { label: "GitHub", href: "https://github.com/Introvera", icon: <IcGitHub className="size-5" /> },
+    // { label: "GitHub", href: "https://github.com/Introvera", icon: <IcGitHub className="size-5" /> },
   ],
   contact: {
     addressLines: ["275/3, New Kandy Road,", "Biyagama, Sri Lanka."],

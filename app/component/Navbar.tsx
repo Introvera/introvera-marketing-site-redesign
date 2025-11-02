@@ -15,6 +15,7 @@ export const navItems: NavItem[] = [
   { label: "About Us", href: "#aboutus" },
   { label: "Services", href: "#services" },
   { label: "Projects", href: "#projects" },
+  { label: "Testimonials", href: "#testimonials" },
 ];
 
 const Navbar: React.FC = () => {

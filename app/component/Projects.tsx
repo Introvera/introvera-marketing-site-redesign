@@ -19,9 +19,9 @@ import {
 /* ─────────────────────────── Card Type (unchanged) ─────────────────────────── */
 type Project = { id: string; title: string; subtitle: string; bg: string; logo?: string };
 const PROJECTS: Project[] = [
-  { id: "p1", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
+  { id: "p1", title: "DREAM AUTO", subtitle: "Vehicle Recommendation Platform", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
   { id: "p2", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
-  { id: "p3", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
+  { id: "p3", title: "WE NEIGHBOUR", subtitle: "Modern, Free Community Management Platform", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
   { id: "p4", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
   { id: "p5", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
 ];
@@ -42,32 +42,40 @@ type ProjectDetail = {
 // Map card.id -> modal content
 const DETAILS: Record<Project["id"], ProjectDetail> = {
   p1: {
-    title: "Schoolify",
+    title: "DREAM AUTO",
     category: "Web App",
     description:
-      "Your all-in-one learning companion, making studying smarter, not harder!",
+      "Vehicle Recommendation Platform!",
     src: "/projects/schoolify/cover.jpg", 
     content: (
       <>
-        Schoolify is a unified digital platform designed to bridge the
-        communication and management gaps in Sri Lankan schools, especially in
-        rural and public education sectors. By centralizing essential school
-        operations, Schoolify empowers teachers, students, and parents to stay
-        connected, informed, and engaged — all from one place. With features
-        like real-time notifications, digital attendance tracking, assignment
-        and grade management, and a centralized school calendar, Schoolify
-        ensures that no student or parent misses critical academic updates. It
-        reduces the administrative burden on educators while increasing parental
-        involvement and student accountability. Through its intuitive interface
-        and resource-sharing capabilities, Schoolify supports high-quality,
-        accessible education by enabling remote access to study materials,
-        progress reports, and school announcements. By streamlining
-        communication and administration, Schoolify helps foster a more
-        inclusive, collaborative, and effective educational ecosystem in Sri
-        Lanka.
+        Our vehicle recommendation platform is built to transform the way people
+        buy vehicles — especially those who feel overwhelmed by the complexity
+        of choosing the right car. Whether you&apos;re a first-time buyer, a busy
+        professional, or someone simply unsure of how to navigate loans and
+        insurance, our intelligent and user-friendly progressive web app is
+        designed with you in mind.
+        <br />
+        Using machine learning, we provide smart, personalized vehicle
+        suggestions tailored to your budget, lifestyle, and driving needs. From
+        fuel economy to loan compatibility, our system considers every factor
+        that matters — and gets smarter with every use. Alongside this, our
+        integrated chatbot breaks down finance and insurance options
+        step-by-step, so even those with no prior knowledge can make confident
+        decisions.
+        <br />
+        But we don&apos;t stop there. The app includes powerful features like
+        real-time price prediction, a vehicle comparison tool, availability
+        tracking, and even test drive booking. Buyers can browse or sell through
+        our built-in marketplace, while our insights into new and used vehicle
+        trends help users find value and make informed choices.
+        <br />
+        Whether you&apos;re looking for a budget car, a sustainable EV, or a
+        high-end investment vehicle, our platform is built to make the process
+        smarter, faster, and easier for everyone — no expertise required.
       </>
     ),
-    link: "https://facebook.com",
+    link: "https://www.dreamautomart.com/",
     projectphotos: [
       "/projects/schoolifycard.jpg",
       "/projects/schoolifycard.jpg",
@@ -101,7 +109,7 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
         Lanka.
       </>
     ),
-    link: "https://facebook.com",
+    link: "https://www.getschoolify.com/",
     projectphotos: [
       "/projects/schoolifycard.jpg",
       "/projects/schoolifycard.jpg",
@@ -109,32 +117,37 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
     ],
   },
   p3: {
-    title: "Schoolify",
-    category: "Web App",
+    title: "WE NEIGHBOUR",
+    category: "Mobile App",
     description:
-      "Your all-in-one learning companion, making studying smarter, not harder!",
+      "Modern, Free Community Management Platform",
     src: "/projects/schoolify/cover.jpg", 
     content: (
       <>
-        Schoolify is a unified digital platform designed to bridge the
-        communication and management gaps in Sri Lankan schools, especially in
-        rural and public education sectors. By centralizing essential school
-        operations, Schoolify empowers teachers, students, and parents to stay
-        connected, informed, and engaged — all from one place. With features
-        like real-time notifications, digital attendance tracking, assignment
-        and grade management, and a centralized school calendar, Schoolify
-        ensures that no student or parent misses critical academic updates. It
-        reduces the administrative burden on educators while increasing parental
-        involvement and student accountability. Through its intuitive interface
-        and resource-sharing capabilities, Schoolify supports high-quality,
-        accessible education by enabling remote access to study materials,
-        progress reports, and school announcements. By streamlining
-        communication and administration, Schoolify helps foster a more
-        inclusive, collaborative, and effective educational ecosystem in Sri
-        Lanka.
+        We Neighbour is a modern, free community management platform designed
+        specifically for apartment residents. Our mission is to build safer,
+        more connected, and resourceful communities by simplifying daily living
+        and encouraging meaningful engagement among neighbours. Whether it&apos;s
+        borrowing a tool, reporting a maintenance issue, or planning a community
+        event, We Neighbour brings all essential apartment functions into one
+        smart platform.
+        <br />
+        Residents gain verified access to a secure environment through
+        manager-approved profiles, ensuring privacy and safety. From real-time
+        safety alerts and maintenance tracking to event calendars, amenity
+        bookings, and visitor check-ins with QR codes, every feature is designed
+        to improve communication and convenience within your building. Our
+        platform also offers a trusted directory of service providers, a
+        community forum for open discussion, and wellness programs that promote
+        both physical and social wellbeing.
+        <br />
+        By supporting local businesses and making it easier for residents to
+        connect, collaborate, and care for their shared spaces, We Neighbour
+        transforms apartment living into a truly communal experience — safer,
+        smarter, and more engaging for everyone.
       </>
     ),
-    link: "https://facebook.com",
+    link: "https://www.weneighbour.live/",
     projectphotos: [
       "/projects/schoolifycard.jpg",
       "/projects/schoolifycard.jpg",

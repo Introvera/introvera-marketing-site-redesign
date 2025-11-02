@@ -68,30 +68,87 @@ const ITEMS: Testimonial[] = [
   },
 ];
 
-/* ─────────────────────────── Card ─────────────────────────── */
+/* ─────────────────────────── DEESHANA Card ─────────────────────────── */
+// const Card = ({ t }: { t: Testimonial }) => {
+//   return (
+//     <article
+//       className="relative flex flex-col justify-between rounded-[20px] backdrop-blur px-5 pt-4 pb-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)] border border-[rgba(76,1,174,0.28)] bg-black/[0.28]
+//       h-[200px] sm:h-[320px] md:h-[362px]"
+//     >
+//       {/* Header */}
+//       <div className="flex items-center gap-[14px]">
+//           {t.avatar && (
+//             <Image
+//               src={t.avatar}
+//               alt={t.name}
+//               width={60}
+//               height={60}
+//               className="object-cover rounded-full 
+//               w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[60px] md:h-[60px]"
+//             />
+//           )}
+//         <div className="min-w-0">
+//           <p className="text-bright font-semibold text-[16px] sm:text-[18px] md:text-[20px] leading-[20px] sm:leading-[24px] md:leading-[28px]">
+//             {t.name}
+//           </p>
+//           <p className="text-bright-soft text-[12px] sm:text-[13px] md:text-[14px] leading-[16px] sm:leading-[18px] md:leading-[19.6px]">
+//             {t.role}
+//           </p>
+//         </div>
+//       </div>
+
+//       {/* Gradient divider */}
+//       <div
+//         className="mt-4 mb-4 h-px w-full"
+//         style={{
+//           background:
+//             "linear-gradient(90deg, rgba(123,22,255,0.04) 0%, #7B16FF 50%, rgba(123,22,255,0.04) 100%)",
+//         }}
+//       />
+
+//       {/* Body */}
+//       <p
+//         className="text-white overflow-hidden
+//         line-clamp-5 sm:line-clamp-6 md:line-clamp-none
+//         text-[14px] sm:text-[15px] md:text-[16px] leading-[20px] sm:leading-[22px] md:leading-[22.4px] 
+//         h-[140px] sm:h-[170px] md:h-[221px]"
+//       >
+//         “{t.quote}”
+//       </p>
+//     </article>
+//   );
+// };
 const Card = ({ t }: { t: Testimonial }) => {
   return (
     <article
-      className="relative flex flex-col justify-between rounded-[20px] backdrop-blur px-5 pt-4 pb-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)] border border-[rgba(76,1,174,0.28)] bg-black/[0.28]
-      h-[200px] sm:h-[320px] md:h-[362px]"
+      className="relative flex flex-col gap-3 sm:gap-4 md:gap-5
+                 rounded-[20px] backdrop-blur px-5 pt-4 pb-5
+                 shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                 border border-[rgba(76,1,174,0.28)] bg-black/[0.28]
+                 h-auto"             // ← no fixed/min heights
     >
       {/* Header */}
       <div className="flex items-center gap-[14px]">
-          {t.avatar && (
-            <Image
-              src={t.avatar}
-              alt={t.name}
-              width={60}
-              height={60}
-              className="object-cover rounded-full 
-              w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[60px] md:h-[60px]"
-            />
-          )}
-        <div className="min-w-0">
-          <p className="text-bright font-semibold text-[16px] sm:text-[18px] md:text-[20px] leading-[20px] sm:leading-[24px] md:leading-[28px]">
+        {t.avatar && (
+          <Image
+            src={t.avatar}
+            alt={t.name}
+            width={60}
+            height={60}
+            className="object-cover rounded-full shrink-0
+                       w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]"
+          />
+        )}
+        <div className="flex-1 min-w-0">
+          <p className="text-bright font-semibold text-[16px] sm:text-[18px] md:text-[20px]
+                        leading-[20px] sm:leading-[24px] md:leading-[28px]
+                        break-words hyphens-auto whitespace-normal"
+             title={t.name}>
             {t.name}
           </p>
-          <p className="text-bright-soft text-[12px] sm:text-[13px] md:text-[14px] leading-[16px] sm:leading-[18px] md:leading-[19.6px]">
+          <p className="text-bright-soft text-[12px] sm:text-[13px] md:text-[14px]
+                        leading-[16px] sm:leading-[18px] md:leading-[19.6px] break-words hyphens-auto whitespace-normal"
+             title={t.role}>
             {t.role}
           </p>
         </div>
@@ -99,7 +156,7 @@ const Card = ({ t }: { t: Testimonial }) => {
 
       {/* Gradient divider */}
       <div
-        className="mt-4 mb-4 h-px w-full"
+        className="my-3 h-px w-full"   // ← tighter margins
         style={{
           background:
             "linear-gradient(90deg, rgba(123,22,255,0.04) 0%, #7B16FF 50%, rgba(123,22,255,0.04) 100%)",
@@ -107,18 +164,15 @@ const Card = ({ t }: { t: Testimonial }) => {
       />
 
       {/* Body */}
-      <p
-        className="text-white overflow-hidden
-        line-clamp-5 sm:line-clamp-6 md:line-clamp-none
-        text-[14px] sm:text-[15px] md:text-[16px] leading-[20px] sm:leading-[22px] md:leading-[22.4px] 
-        h-[140px] sm:h-[170px] md:h-[221px]"
-      >
+      <p className="text-white overflow-hidden break-words hyphens-auto
+                   text-[14px] sm:text-[15px] md:text-[16px]
+                   leading-[20px] sm:leading-[22px] md:leading-[22.4px]
+                   line-clamp-5 sm:line-clamp-6 md:line-clamp-7">
         “{t.quote}”
       </p>
     </article>
   );
 };
-
 /* ─────────────────────────── Layout ─────────────────────────── */
 export default function Testimonials({ items = ITEMS }: { items?: Testimonial[] }) {
   const col1 = items.filter((_, i) => i % 3 === 0);
