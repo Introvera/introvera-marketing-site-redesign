@@ -77,18 +77,16 @@ const Card = ({ t }: { t: Testimonial }) => {
     >
       {/* Header */}
       <div className="flex items-center gap-[14px]">
-        <div className="relative overflow-hidden rounded-full bg-white/10
-          h-[50px] sm:h-[55px] md:h-[60px] w-[50px] sm:w-[55px] md:w-[60px]">
           {t.avatar && (
             <Image
               src={t.avatar}
               alt={t.name}
-              fill
-              sizes="(max-width: 640px) 50px, (max-width: 768px) 55px, 60px"
-              className="object-cover"
+              width={60}
+              height={60}
+              className="object-cover rounded-full 
+              w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[60px] md:h-[60px]"
             />
           )}
-        </div>
         <div className="min-w-0">
           <p className="text-bright font-semibold text-[16px] sm:text-[18px] md:text-[20px] leading-[20px] sm:leading-[24px] md:leading-[28px]">
             {t.name}
