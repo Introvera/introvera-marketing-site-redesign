@@ -75,9 +75,11 @@ const Hero: React.FC = () => {
       id="hero"
       // if your navbar is 68px tall, this keeps the hero perfectly centered below it on lg+
       className="
-        relative -mt-[68px]
-        grid place-items-center
-        min-h-[100svh] lg:min-h-[calc(100svh-68px)]
+        relative
+        flex 
+        items-center
+        justify-center
+        min-h-screen
         overflow-hidden
       "
       style={{

@@ -119,19 +119,19 @@ const Navbar: React.FC = () => {
       initial={{ y: 0 }}
       animate={{ y: showNavbar ? 0 : -100 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="sticky top-0 z-50 w-full flex items-center justify-between h-[68px] px-4 sm:px-6 lg:px-24 bg-black/20 backdrop-blur-md border-b border-gray-800"
+      className="fixed top-0 z-50 w-full flex items-center justify-between h-[68px] px-4 sm:px-6 lg:px-24 bg-black/20 backdrop-blur-md border-b border-gray-800"
     >
       <div className="container mx-auto relative lg:text-sm w-full">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             <Image
-  src="/icons/logocolor.svg"
-  alt="Logo"
-  width={40}       
-  height={40}
-  priority
-  className="mr-2 w-24 h-24 sm:w-26 sm:h-26 md:w-28 md:h-28 lg:w-30 lg:h-30"
+              src="/icons/logocolor.svg"
+              alt="Logo"
+              width={40}       
+              height={40}
+              priority
+              className="mr-2 w-24 h-24 sm:w-26 sm:h-26 md:w-28 md:h-28 lg:w-30 lg:h-30"
 />
 
           </div>

@@ -96,11 +96,11 @@ export default function Footer({ config = defaultFooterConfig }: { config?: Foot
   const { logo, blurb, quickLinks = [], socials = [], contact, showDivider = true, copyright, className = "" } = config;
 
   return (
-    <footer className={`w-full ${className}`} aria-labelledby="footer-heading">
+    <footer className={`w-full mt-40 ${className}`} aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Footer</h2>
 
       {/* container */}
-      <div className="mx-auto max-w-[1296px] px-4 sm:px-6 lg:px-8 pt-[72px] pb-[72px]">
+      <div className="mx-auto max-w-[1296px] px-4 sm:px-6 lg:px-8 pt-[72px] pb-[12px] sm:pb-[22px]">
         {/* Stack on mobile & tablet; keep your row only on lg+ */}
         <div className="flex flex-col items-center gap-y-[40px]
                  lg:grid lg:grid-cols-[360px_180px_180px_320px]
@@ -213,7 +213,7 @@ export default function Footer({ config = defaultFooterConfig }: { config?: Foot
           />
         )}
 
-        <div className="mt-[32px] sm:mt-[52px] w-full text-center text-[#797E82] font-poppins text-[14px] sm:text-[16px] font-normal leading-[28px] sm:leading-[32px]">
+        <div className="mt-[12px] sm:mt-[22px] w-full text-center text-[#797E82] font-poppins text-[14px] sm:text-[16px] font-normal leading-[28px] sm:leading-[32px]">
           {copyright ?? `© ${new Date().getFullYear()} Introvera. All rights reserved.`}
         </div>
       </div>
