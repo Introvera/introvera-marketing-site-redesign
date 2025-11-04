@@ -1188,9 +1188,9 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
     ),
     link: "https://www.dreamautomart.com/",
     projectphotos: [
-      "/projects/dreamauto/1.jpeg",
       "/projects/dreamauto/2.jpeg",
       "/projects/dreamauto/3.jpeg",
+      "/projects/dreamauto/1.jpeg",
     ],
   },
   p2: {
@@ -1258,9 +1258,9 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
     ),
     link: "https://www.weneighbour.live/",
     projectphotos: [
-      "/projects/weneighbour/1.jpg",
-      "/projects/weneighbour/2.jpg",
-      "/projects/weneighbour/3.jpg",
+      "/projects/weneighbour/1.png",
+      "/projects/weneighbour/2.png",
+      "/projects/weneighbour/3.png",
     ],
   },
 };
