@@ -187,7 +187,7 @@ export default function Testimonials({ items = ITEMS }: { items?: Testimonial[] 
       {/* Background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <Image
-          src="https://kzpotlpfxxhmtzvmvbxr.supabase.co/storage/v1/object/sign/marketingSiteImgs/testimonialsImgs/GradientBehindTestimonials.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mYTNiOGMwMi1kNDIwLTQ1ZGEtOTZjMi1mYzI5ZWZmYjQ0ZDAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXJrZXRpbmdTaXRlSW1ncy90ZXN0aW1vbmlhbHNJbWdzL0dyYWRpZW50QmVoaW5kVGVzdGltb25pYWxzLnBuZyIsImlhdCI6MTc2MTU3MTQzOCwiZXhwIjozMzI5NzU3MTQzOH0.0nmB_c3O1OHRavNQB6DQdp5sp8yJbMAFc6m-jCYE5n4"
+          src="/backgrounds/testimonials/GradientBehindTestimonials.png"
           alt="Testimonials background"
           fill
           priority
