@@ -39,33 +39,33 @@ const ITEMS: Testimonial[] = [
     avatar:
       "/backgrounds/testimonials/rashen.jpg",
   },
-  {
-    id: "t4",
-    name: "Aisha Perera",
-    role: "Product Lead",
-    quote:
-      "Introvera moved us from concept to launch smoothly. Communication was clear and the deliverables matched exactly what we designed in Figma.",
-    avatar:
-      "/backgrounds/testimonials/John%20Doe%20Testimonial.png",
-  },
-  {
-    id: "t5",
-    name: "Liam Carter",
-    role: "CTO",
-    quote:
-      "Clean architecture, on-time delivery, and great UI polish. Our web app performance improved significantly after their refactor.",
-    avatar:
-      "/backgrounds/testimonials/John%20Doe%20Testimonial.png",
-  },
-  {
-    id: "t6",
-    name: "Minali Jay",
-    role: "Founder",
-    quote:
-      "They understood the problem deeply and shipped a reliable MVP fast. The team is responsive and easy to work with.",
-    avatar:
-      "/backgrounds/testimonials/John%20Doe%20Testimonial.png",
-  },
+  // {
+  //   id: "t4",
+  //   name: "Aisha Perera",
+  //   role: "Product Lead",
+  //   quote:
+  //     "Introvera moved us from concept to launch smoothly. Communication was clear and the deliverables matched exactly what we designed in Figma.",
+  //   avatar:
+  //     "/backgrounds/testimonials/John%20Doe%20Testimonial.png",
+  // },
+  // {
+  //   id: "t5",
+  //   name: "Liam Carter",
+  //   role: "CTO",
+  //   quote:
+  //     "Clean architecture, on-time delivery, and great UI polish. Our web app performance improved significantly after their refactor.",
+  //   avatar:
+  //     "/backgrounds/testimonials/John%20Doe%20Testimonial.png",
+  // },
+  // {
+  //   id: "t6",
+  //   name: "Minali Jay",
+  //   role: "Founder",
+  //   quote:
+  //     "They understood the problem deeply and shipped a reliable MVP fast. The team is responsive and easy to work with.",
+  //   avatar:
+  //     "/backgrounds/testimonials/John%20Doe%20Testimonial.png",
+  // },
 ];
 
 /* ─────────────────────────── DEESHANA Card ─────────────────────────── */
