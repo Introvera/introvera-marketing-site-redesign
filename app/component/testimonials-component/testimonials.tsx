@@ -17,7 +17,7 @@ const ITEMS: Testimonial[] = [
     name: "Anushka Eranga",
     role: "Lead Software Engineer at Creative Software",
     quote:
-      "What I admire most is these kids' mindset. They approach every idea like engineers test, iterate, refine but they also bring a creative energy that makes their work stand out.",
+      "What I admire most is these mindsets. They approach every idea like engineers test, iterate, refine but they also bring a creative energy that makes their work stand out.",
     avatar:
       "/backgrounds/testimonials/anushka.jpeg",
   },
@@ -26,7 +26,7 @@ const ITEMS: Testimonial[] = [
     name: "Sachini Pathinayaka",
     role: "Lead Software Engineer at IFS",
     quote:
-      "These kids always been the kind of people who learn fast and build things that actually work. It’s been fun watching them grow as developers.",
+      "These guys always been the kind of people who learn fast and build things that actually work. It’s been fun watching them grow as developers.",
     avatar:
       "/backgrounds/testimonials/sachini.jpeg",
   },
