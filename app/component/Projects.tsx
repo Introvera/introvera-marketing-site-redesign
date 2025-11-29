@@ -41,125 +41,125 @@
 
 // // Map card.id -> modal content
 // const DETAILS: Record<Project["id"], ProjectDetail> = {
-  // p1: {
-  //   title: "DREAM AUTO",
-  //   category: "Web App",
-  //   description:
-  //     "Vehicle Recommendation Platform!",
-  //   src: "/projects/schoolify/cover.jpg", 
-  //   content: (
-  //     <>
-  //       Our vehicle recommendation platform is built to transform the way people
-  //       buy vehicles — especially those who feel overwhelmed by the complexity
-  //       of choosing the right car. Whether you&apos;re a first-time buyer, a busy
-  //       professional, or someone simply unsure of how to navigate loans and
-  //       insurance, our intelligent and user-friendly progressive web app is
-  //       designed with you in mind.
-  //       <br />
-  //       Using machine learning, we provide smart, personalized vehicle
-  //       suggestions tailored to your budget, lifestyle, and driving needs. From
-  //       fuel economy to loan compatibility, our system considers every factor
-  //       that matters — and gets smarter with every use. Alongside this, our
-  //       integrated chatbot breaks down finance and insurance options
-  //       step-by-step, so even those with no prior knowledge can make confident
-  //       decisions.
-  //       <br />
-  //       But we don&apos;t stop there. The app includes powerful features like
-  //       real-time price prediction, a vehicle comparison tool, availability
-  //       tracking, and even test drive booking. Buyers can browse or sell through
-  //       our built-in marketplace, while our insights into new and used vehicle
-  //       trends help users find value and make informed choices.
-  //       <br />
-  //       Whether you&apos;re looking for a budget car, a sustainable EV, or a
-  //       high-end investment vehicle, our platform is built to make the process
-  //       smarter, faster, and easier for everyone — no expertise required.
-  //     </>
-  //   ),
-  //   link: "https://www.dreamautomart.com/",
-  //   projectphotos: [
-  //     "/projects/schoolifycard.jpg",
-  //     "/projects/schoolifycard.jpg",
-  //     "/projects/schoolifycard.jpg",
-  //   ],
-  // },
-  // // Fill these with each project's unique content as you have it:
-  // p2: {
-  //   title: "Schoolify",
-  //   category: "Web App",
-  //   description:
-  //     "Your all-in-one learning companion, making studying smarter, not harder!",
-  //   src: "/projects/schoolify/cover.jpg", 
-  //   content: (
-  //     <>
-  //       Schoolify is a unified digital platform designed to bridge the
-  //       communication and management gaps in Sri Lankan schools, especially in
-  //       rural and public education sectors. By centralizing essential school
-  //       operations, Schoolify empowers teachers, students, and parents to stay
-  //       connected, informed, and engaged — all from one place. With features
-  //       like real-time notifications, digital attendance tracking, assignment
-  //       and grade management, and a centralized school calendar, Schoolify
-  //       ensures that no student or parent misses critical academic updates. It
-  //       reduces the administrative burden on educators while increasing parental
-  //       involvement and student accountability. Through its intuitive interface
-  //       and resource-sharing capabilities, Schoolify supports high-quality,
-  //       accessible education by enabling remote access to study materials,
-  //       progress reports, and school announcements. By streamlining
-  //       communication and administration, Schoolify helps foster a more
-  //       inclusive, collaborative, and effective educational ecosystem in Sri
-  //       Lanka.
-  //     </>
-  //   ),
-  //   link: "https://www.getschoolify.com/",
-  //   projectphotos: [
-  //     "/projects/schoolifycard.jpg",
-  //     "/projects/schoolifycard.jpg",
-  //     "/projects/schoolifycard.jpg",
-  //   ],
-  // },
-  // p3: {
-  //   title: "WE NEIGHBOUR",
-  //   category: "Mobile App",
-  //   description:
-  //     "Modern, Free Community Management Platform",
-  //   src: "/projects/schoolify/cover.jpg", 
-  //   content: (
-  //     <>
-  //       We Neighbour is a modern, free community management platform designed
-  //       specifically for apartment residents. Our mission is to build safer,
-  //       more connected, and resourceful communities by simplifying daily living
-  //       and encouraging meaningful engagement among neighbours. Whether it&apos;s
-  //       borrowing a tool, reporting a maintenance issue, or planning a community
-  //       event, We Neighbour brings all essential apartment functions into one
-  //       smart platform.
-  //       <br />
-  //       Residents gain verified access to a secure environment through
-  //       manager-approved profiles, ensuring privacy and safety. From real-time
-  //       safety alerts and maintenance tracking to event calendars, amenity
-  //       bookings, and visitor check-ins with QR codes, every feature is designed
-  //       to improve communication and convenience within your building. Our
-  //       platform also offers a trusted directory of service providers, a
-  //       community forum for open discussion, and wellness programs that promote
-  //       both physical and social wellbeing.
-  //       <br />
-  //       By supporting local businesses and making it easier for residents to
-  //       connect, collaborate, and care for their shared spaces, We Neighbour
-  //       transforms apartment living into a truly communal experience — safer,
-  //       smarter, and more engaging for everyone.
-  //     </>
-  //   ),
-  //   link: "https://www.weneighbour.live/",
-  //   projectphotos: [
-  //     "/projects/schoolifycard.jpg",
-  //     "/projects/schoolifycard.jpg",
-  //     "/projects/schoolifycard.jpg",
-  //   ],
-  // },
+// p1: {
+//   title: "DREAM AUTO",
+//   category: "Web App",
+//   description:
+//     "Vehicle Recommendation Platform!",
+//   src: "/projects/schoolify/cover.jpg",
+//   content: (
+//     <>
+//       Our vehicle recommendation platform is built to transform the way people
+//       buy vehicles — especially those who feel overwhelmed by the complexity
+//       of choosing the right car. Whether you&apos;re a first-time buyer, a busy
+//       professional, or someone simply unsure of how to navigate loans and
+//       insurance, our intelligent and user-friendly progressive web app is
+//       designed with you in mind.
+//       <br />
+//       Using machine learning, we provide smart, personalized vehicle
+//       suggestions tailored to your budget, lifestyle, and driving needs. From
+//       fuel economy to loan compatibility, our system considers every factor
+//       that matters — and gets smarter with every use. Alongside this, our
+//       integrated chatbot breaks down finance and insurance options
+//       step-by-step, so even those with no prior knowledge can make confident
+//       decisions.
+//       <br />
+//       But we don&apos;t stop there. The app includes powerful features like
+//       real-time price prediction, a vehicle comparison tool, availability
+//       tracking, and even test drive booking. Buyers can browse or sell through
+//       our built-in marketplace, while our insights into new and used vehicle
+//       trends help users find value and make informed choices.
+//       <br />
+//       Whether you&apos;re looking for a budget car, a sustainable EV, or a
+//       high-end investment vehicle, our platform is built to make the process
+//       smarter, faster, and easier for everyone — no expertise required.
+//     </>
+//   ),
+//   link: "https://www.dreamautomart.com/",
+//   projectphotos: [
+//     "/projects/schoolifycard.jpg",
+//     "/projects/schoolifycard.jpg",
+//     "/projects/schoolifycard.jpg",
+//   ],
+// },
+// // Fill these with each project's unique content as you have it:
+// p2: {
+//   title: "Schoolify",
+//   category: "Web App",
+//   description:
+//     "Your all-in-one learning companion, making studying smarter, not harder!",
+//   src: "/projects/schoolify/cover.jpg",
+//   content: (
+//     <>
+//       Schoolify is a unified digital platform designed to bridge the
+//       communication and management gaps in Sri Lankan schools, especially in
+//       rural and public education sectors. By centralizing essential school
+//       operations, Schoolify empowers teachers, students, and parents to stay
+//       connected, informed, and engaged — all from one place. With features
+//       like real-time notifications, digital attendance tracking, assignment
+//       and grade management, and a centralized school calendar, Schoolify
+//       ensures that no student or parent misses critical academic updates. It
+//       reduces the administrative burden on educators while increasing parental
+//       involvement and student accountability. Through its intuitive interface
+//       and resource-sharing capabilities, Schoolify supports high-quality,
+//       accessible education by enabling remote access to study materials,
+//       progress reports, and school announcements. By streamlining
+//       communication and administration, Schoolify helps foster a more
+//       inclusive, collaborative, and effective educational ecosystem in Sri
+//       Lanka.
+//     </>
+//   ),
+//   link: "https://www.getschoolify.com/",
+//   projectphotos: [
+//     "/projects/schoolifycard.jpg",
+//     "/projects/schoolifycard.jpg",
+//     "/projects/schoolifycard.jpg",
+//   ],
+// },
+// p3: {
+//   title: "WE NEIGHBOUR",
+//   category: "Mobile App",
+//   description:
+//     "Modern, Free Community Management Platform",
+//   src: "/projects/schoolify/cover.jpg",
+//   content: (
+//     <>
+//       We Neighbour is a modern, free community management platform designed
+//       specifically for apartment residents. Our mission is to build safer,
+//       more connected, and resourceful communities by simplifying daily living
+//       and encouraging meaningful engagement among neighbours. Whether it&apos;s
+//       borrowing a tool, reporting a maintenance issue, or planning a community
+//       event, We Neighbour brings all essential apartment functions into one
+//       smart platform.
+//       <br />
+//       Residents gain verified access to a secure environment through
+//       manager-approved profiles, ensuring privacy and safety. From real-time
+//       safety alerts and maintenance tracking to event calendars, amenity
+//       bookings, and visitor check-ins with QR codes, every feature is designed
+//       to improve communication and convenience within your building. Our
+//       platform also offers a trusted directory of service providers, a
+//       community forum for open discussion, and wellness programs that promote
+//       both physical and social wellbeing.
+//       <br />
+//       By supporting local businesses and making it easier for residents to
+//       connect, collaborate, and care for their shared spaces, We Neighbour
+//       transforms apartment living into a truly communal experience — safer,
+//       smarter, and more engaging for everyone.
+//     </>
+//   ),
+//   link: "https://www.weneighbour.live/",
+//   projectphotos: [
+//     "/projects/schoolifycard.jpg",
+//     "/projects/schoolifycard.jpg",
+//     "/projects/schoolifycard.jpg",
+//   ],
+// },
 //   p4: {
 //     title: "Schoolify",
 //     category: "Web App",
 //     description:
 //       "Your all-in-one learning companion, making studying smarter, not harder!",
-//     src: "/projects/schoolify/cover.jpg", 
+//     src: "/projects/schoolify/cover.jpg",
 //     content: (
 //       <>
 //         Schoolify is a unified digital platform designed to bridge the
@@ -192,7 +192,7 @@
 //     category: "Web App",
 //     description:
 //       "Your all-in-one learning companion, making studying smarter, not harder!",
-//     src: "/projects/schoolify/cover.jpg", 
+//     src: "/projects/schoolify/cover.jpg",
 //     content: (
 //       <>
 //         Schoolify is a unified digital platform designed to bridge the
@@ -257,7 +257,7 @@
 //     });
 //     setActive(best);
 //   };
-  
+
 //   React.useEffect(() => {
 //     const el = scrollerRef.current;
 //     if (!el) return;
@@ -331,10 +331,10 @@
 //             INNOVATION
 //           </span>        </h2>
 //         <p className="mt-4 text-sm md:text-base text-white/60">
-//           Explore our diverse portfolio of projects that showcase innovation, 
-//           creativity, and technical excellence. From intuitive mobile and web 
-//           applications to scalable backend systems and cloud solutions, each 
-//           project reflects our commitment to delivering impactful and user-focused, 
+//           Explore our diverse portfolio of projects that showcase innovation,
+//           creativity, and technical excellence. From intuitive mobile and web
+//           applications to scalable backend systems and cloud solutions, each
+//           project reflects our commitment to delivering impactful and user-focused,
 //           and digital experiences.
 //         </p>
 //       </div>
@@ -380,8 +380,8 @@
 //             const isActive = i === active;
 //             return (
 //               <div key={p.id} className="snap-center shrink-0 my-20" style={{ width: "min(88vw, 660px)" }}>
-//               <Card 
-//                 as="div" 
+//               <Card
+//                 as="div"
 //                 isPressable
 //                 onPress={() => {
 //                   if (!dragging.current) openFor(p.id);
@@ -547,8 +547,6 @@
 //   );
 // }
 
-
-
 // "use client";
 
 // import React from "react";
@@ -595,7 +593,7 @@
 //     category: "Web App",
 //     description:
 //       "Vehicle Recommendation Platform!",
-//     src: "/projects/schoolify/cover.jpg", 
+//     src: "/projects/schoolify/cover.jpg",
 //     content: (
 //       <>
 //         Our vehicle recommendation platform is built to transform the way people
@@ -637,7 +635,7 @@
 //     category: "Web App",
 //     description:
 //       "Your all-in-one learning companion, making studying smarter, not harder!",
-//     src: "/projects/schoolify/cover.jpg", 
+//     src: "/projects/schoolify/cover.jpg",
 //     content: (
 //       <>
 //         Schoolify is a unified digital platform designed to bridge the
@@ -670,7 +668,7 @@
 //     category: "Mobile App",
 //     description:
 //       "Modern, Free Community Management Platform",
-//     src: "/projects/schoolify/cover.jpg", 
+//     src: "/projects/schoolify/cover.jpg",
 //     content: (
 //       <>
 //         We Neighbour is a modern, free community management platform designed
@@ -1104,39 +1102,69 @@
 //   );
 // }
 
-
-
-
-
-
-
-
-
 "use client";
 
-import React from "react";
 import Image, { StaticImageData } from "next/image";
+import React from "react";
 // ⬇️ extended import (adds modal pieces)
 import {
+  Button,
   Card,
   CardBody,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  useDisclosure,
   Link,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  useDisclosure,
 } from "@heroui/react";
 
 /* ─────────────────────────── Card Type (unchanged) ─────────────────────────── */
-type Project = { id: string; title: string; subtitle: string; bg: string; logo?: string };
+type Project = {
+  id: string;
+  title: string;
+  subtitle: string;
+  bg: string;
+  logo?: string;
+};
 const PROJECTS: Project[] = [
-  { id: "p1", title: "DREAM AUTO", subtitle: "Vehicle Recommendation Platform", bg: "/projects/dreamauto.jpg", logo: "/icons/dreamautologo.png" },
-  { id: "p2", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
-  { id: "p3", title: "WE NEIGHBOUR", subtitle: "Modern, Free Community Management Platform", bg: "/projects/weneighbour.jpg", logo: "/icons/weneighbourlogo.png" },
-  // { id: "p4", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
+  {
+    id: "p1",
+    title: "DREAM AUTO",
+    subtitle: "Vehicle Recommendation Platform",
+    bg: "/projects/dreamauto.jpg",
+    logo: "/icons/dreamautologo.png",
+  },
+  {
+    id: "p2",
+    title: "SCHOOLIFY",
+    subtitle: "Learning Management System",
+    bg: "/projects/schoolifycard.jpg",
+    logo: "/icons/schoolifylogo.png",
+  },
+  {
+    id: "p3",
+    title: "WE NEIGHBOUR",
+    subtitle: "Modern, Free Community Management Platform",
+    bg: "/projects/weneighbour.jpg",
+    logo: "/icons/weneighbourlogo.png",
+  },
+  {
+    id: "p4",
+    title: "Ultracraft",
+    subtitle: "Furniture & Interior Solutions Website",
+    bg: "/projects/ultracraft.jpg",
+    logo: "/icons/ultracraftlogo.png",
+  },
+  {
+    id: "p5",
+    title: "ADEaZ",
+    subtitle: "Online Fashion Store",
+    bg: "/projects/adeaz.jpg",
+    logo: "/icons/adeazlogo.png",
+  },
+
   // { id: "p5", title: "SCHOOLIFY", subtitle: "Learning Management System", bg: "/projects/schoolifycard.jpg", logo: "/icons/schoolifylogo.png" },
 ];
 
@@ -1162,8 +1190,8 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
       <>
         Our vehicle recommendation platform is built to transform the way people
         buy vehicles — especially those who feel overwhelmed by the complexity
-        of choosing the right car. Whether you&apos;re a first-time buyer, a busy
-        professional, or someone simply unsure of how to navigate loans and
+        of choosing the right car. Whether you&apos;re a first-time buyer, a
+        busy professional, or someone simply unsure of how to navigate loans and
         insurance, our intelligent and user-friendly progressive web app is
         designed with you in mind.
         <br />
@@ -1236,10 +1264,10 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
         We Neighbour is a modern, free community management platform designed
         specifically for apartment residents. Our mission is to build safer,
         more connected, and resourceful communities by simplifying daily living
-        and encouraging meaningful engagement among neighbours. Whether it&apos;s
-        borrowing a tool, reporting a maintenance issue, or planning a community
-        event, We Neighbour brings all essential apartment functions into one
-        smart platform.
+        and encouraging meaningful engagement among neighbours. Whether
+        it&apos;s borrowing a tool, reporting a maintenance issue, or planning a
+        community event, We Neighbour brings all essential apartment functions
+        into one smart platform.
         <br />
         Residents gain verified access to a secure environment through
         manager-approved profiles, ensuring privacy and safety. From real-time
@@ -1263,6 +1291,76 @@ const DETAILS: Record<Project["id"], ProjectDetail> = {
       "/projects/weneighbour/3.png",
     ],
   },
+  p4: {
+    title: "Ultracraft",
+    category: "Website",
+    description: "Ultracraft.lk — Furniture & Interior Solutions Website",
+    src: "/projects/weneighbour/cover.jpg",
+    content: (
+      <>
+        <strong>Ultracraft.lk</strong> is a premium furniture and custom
+        interior solutions company based in Sri Lanka. We designed and developed
+        their official website to showcase Ultracraft's craftsmanship, attention
+        to detail, and bespoke interior services through a clean, elegant, and
+        user-first design.
+        <br />
+        <br />
+        The site highlights curated furniture collections with high-quality
+        imagery and provides clear, informative service pages for custom
+        interiors, space planning, and renovations. Every interaction — from
+        browsing products to requesting a consultation — is fast, intuitive, and
+        optimized for both desktop and mobile users.
+        <br />
+        <br />
+        Built with a focus on performance and ease of management, the website
+        includes streamlined navigation, easy content updates for the Ultracraft
+        team, and smooth visual presentation to reinforce the brand's premium
+        positioning. The end result is a visually striking, professional online
+        presence that helps Ultracraft.lk connect with customers, showcase their
+        work, and grow their business.
+      </>
+    ),
+    link: "https://ultracraft.lk/",
+    projectphotos: [
+      "/projects/ultracraft/1.png",
+      "/projects/ultracraft/2.png",
+      "/projects/ultracraft/3.png",
+    ],
+  },
+  p5: {
+    title: "ADEaZ",
+    category: "Website",
+    description: "Adeaz Your Ultimate Online Fashion Destination!",
+    src: "/projects/adeaz/cover.jpg",
+    content: (
+      <>
+        <strong>ADEaZ</strong> is a premium online fashion destination based in
+        Sri Lanka. We designed and developed their official website to showcase
+        ADEaZ’s curated collections, effortless style, and customer-first
+        shopping experience through a clean, modern, and visually-driven design.
+        <br />
+        <br />
+        The site highlights seasonal clothing lines, accessories, and footwear
+        with high-quality imagery and clear product detail pages. Every
+        interaction — from browsing curated looks to adding items to cart and
+        tracking orders — is fast, intuitive, and optimized for both desktop and
+        mobile users.
+        <br />
+        <br />
+        Built with a focus on conversion and ease of management, the website
+        includes streamlined navigation, powerful filters, secure checkout
+        options, and simple content updates for the Adeaz team. The result is a
+        stylish, reliable online presence that helps Adeaz connect with
+        customers, showcase new trends, and grow the brand.
+      </>
+    ),
+    link: "https://adeaz.netlify.app",
+    projectphotos: [
+      "/projects/adeaz/1.png",
+      "/projects/adeaz/2.png",
+      "/projects/adeaz/3.png",
+    ],
+  },
 };
 /* ─────────────────────── ▲▲ Modal additions ▲▲ ─────────────────────── */
 
@@ -1283,7 +1381,10 @@ const ProjectPhoto: React.FC<{ src: Img; alt: string }> = ({ src, alt }) => {
         fill
         className={isPortrait ? "object-contain" : "object-cover"}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw"
-        onLoadingComplete={(img: { naturalWidth: number; naturalHeight: number }) => {
+        onLoadingComplete={(img: {
+          naturalWidth: number;
+          naturalHeight: number;
+        }) => {
           if (img.naturalHeight > img.naturalWidth) {
             setIsPortrait(true);
           }
@@ -1306,7 +1407,9 @@ export default function Projects() {
   // Modal state
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modalSize] = React.useState<"5xl">("5xl");
-  const [selectedId, setSelectedId] = React.useState<Project["id"] | null>(null);
+  const [selectedId, setSelectedId] = React.useState<Project["id"] | null>(
+    null
+  );
   const selected = selectedId ? DETAILS[selectedId] : null;
   const openFor = (id: Project["id"]) => {
     setSelectedId(id);
@@ -1328,7 +1431,9 @@ export default function Projects() {
     const el = scrollerRef.current;
     if (!el) return null;
     const a = el.children[centerOffset] as HTMLElement | undefined; // first of middle copy
-    const b = el.children[centerOffset + PROJECTS.length] as HTMLElement | undefined; // first of right copy
+    const b = el.children[centerOffset + PROJECTS.length] as
+      | HTMLElement
+      | undefined; // first of right copy
     if (!a || !b) return null;
     return b.offsetLeft - a.offsetLeft; // exact pixel span of one group
   };
@@ -1359,10 +1464,11 @@ export default function Projects() {
     const span = groupSpanRef.current;
     if (!span) return false;
 
-    const leftAnchor = (el.children[centerOffset] as HTMLElement)?.offsetLeft ?? 0;
+    const leftAnchor =
+      (el.children[centerOffset] as HTMLElement)?.offsetLeft ?? 0;
     const rightAnchor =
-      (el.children[centerOffset + PROJECTS.length] as HTMLElement)?.offsetLeft ??
-      leftAnchor + span;
+      (el.children[centerOffset + PROJECTS.length] as HTMLElement)
+        ?.offsetLeft ?? leftAnchor + span;
 
     // Add a small hysteresis to avoid instant re-teleport
     const PAD = Math.max(4, Math.floor(span * 0.02)); // 2% or >=4px
@@ -1471,7 +1577,8 @@ export default function Projects() {
             <span className="gradient-text-line">INNOVATION</span>
           </h2>
           <p className="mt-4 text-sm md:text-base text-white/60">
-            Explore our diverse portfolio of projects that showcase innovation, creativity, and technical excellence…
+            Explore our diverse portfolio of projects that showcase innovation,
+            creativity, and technical excellence…
           </p>
         </div>
 
@@ -1514,7 +1621,7 @@ export default function Projects() {
             ].join(" ")}
           >
             {LOOPED_PROJECTS.map((p, i) => {
-              const isActive = (i % PROJECTS.length) === active;
+              const isActive = i % PROJECTS.length === active;
               return (
                 <div
                   key={`${p.id}-${i}`}
@@ -1658,17 +1765,18 @@ export default function Projects() {
               <ModalBody>
                 {selected && (
                   <div className="space-y-6">
-                    {selected.projectphotos && selected.projectphotos.length > 0 && (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {selected.projectphotos.map((src, idx) => (
-                          <ProjectPhoto
-                            key={idx}
-                            src={src}
-                            alt={`Project photo ${idx + 1}`}
-                          />
-                        ))}
-                      </div>
-                    )}
+                    {selected.projectphotos &&
+                      selected.projectphotos.length > 0 && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {selected.projectphotos.map((src, idx) => (
+                            <ProjectPhoto
+                              key={idx}
+                              src={src}
+                              alt={`Project photo ${idx + 1}`}
+                            />
+                          ))}
+                        </div>
+                      )}
                     <h4>{selected.description}</h4>
                     <p>{selected.content}</p>
                   </div>
