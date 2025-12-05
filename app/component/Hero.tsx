@@ -115,7 +115,7 @@ const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-nowrap lg:gap-6">
           {/* Left Gradient Button */}
           <a href="#contact" className="scroll-smooth">
-            <button className="w-[150px] lg:w-[165px] 2xl:w-[250px] h-[50px] sm:h-[56px] 2xl:h-[76px] rounded-full bg-gradient-to-r from-[#4C01AE] to-[#B38CFF] text-white font-semibold text-base sm:text-lg  xl:text-xl hover:opacity-90 transition cursor-pointer">
+            <button className="w-[150px] lg:w-[165px] 2xl:w-[250px] h-[50px] sm:h-[56px] 2xl:h-[76px] rounded-full bg-gradient-to-r from-[#4C01AE] to-[#B38CFF] text-white font-semibold text-base sm:text-sm  md:text-sm lg:text-lg  2xl:text-2xl hover:opacity-90 transition cursor-pointer">
               Get Started
             </button>
           </a>
@@ -126,7 +126,7 @@ const Hero: React.FC = () => {
             className="rounded-full bg-gradient-to-l from-[#4C01AE] to-[#B38CFF] p-[2px] 
                        w-[150px] lg:w-[165px] h-[50px] sm:h-[56px] 2xl:h-[76px] 2xl:w-[250px]"
           >
-            <button className="w-full h-full rounded-full border-2 border-transparent bg-black text-white font-semibold text-base sm:text-lg lg:text-lg xl:text-xl hover:bg-[#4C01AE]/20 transition cursor-pointer">
+            <button className="w-full h-full rounded-full border-2 border-transparent bg-black text-white font-semibold text-base sm:text-sm md:text-sm lg:text-lg  2xl:text-2xl hover:bg-[#4C01AE]/20 transition cursor-pointer">
               View Our Work
             </button>
           </a>
