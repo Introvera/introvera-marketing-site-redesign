@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useState, FormEvent } from "react";
-import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { FormEvent, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const ContactUs = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -32,11 +32,14 @@ const ContactUs = () => {
     };
 
     try {
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         setStatus("Message sent!");
@@ -50,7 +53,11 @@ const ContactUs = () => {
   };
 
   return (
-    <div ref={ref} className="mx-auto py-16 px-6 sm:px-8 md:px-10 lg:px-16" id="contact">
+    <div
+      ref={ref}
+      className="mx-auto py-16 px-6 sm:px-8 md:px-10 lg:px-16"
+      id="contact"
+    >
       {inView ? (
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -171,7 +178,11 @@ const ContactUs = () => {
             <div className="flex flex-col flex-1 gap-9 h-full">
               <h3 className="text-xl font-semibold">Send us a message</h3>
 
-              <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4 w-full h-full">
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-4 w-full h-full"
+              >
                 {/* Name */}
                 <div className="flex flex-col gap-2 w-full">
                   <label className="text-base font-medium text-gray-200">
@@ -235,8 +246,8 @@ const ContactUs = () => {
                 </div>
 
                 <button
-  type="submit"
-  className="
+                  type="submit"
+                  className="
     flex justify-center items-center gap-2
     h-[56px] py-[10px] px-[20px]
     rounded-full
@@ -246,11 +257,13 @@ const ContactUs = () => {
     font-semibold text-white
     hover:opacity-90 transition
   "
->
-  Send Message
-</button>
+                >
+                  Send Message
+                </button>
 
-                {status && <p className="text-center mt-2 text-gray-300">{status}</p>}
+                {status && (
+                  <p className="text-center mt-2 text-gray-300">{status}</p>
+                )}
               </form>
             </div>
           </div>

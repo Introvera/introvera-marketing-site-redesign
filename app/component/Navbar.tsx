@@ -1,9 +1,9 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
-import { useEffect, useMemo, useState, MouseEvent } from "react";
 import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { MouseEvent, useEffect, useMemo, useState } from "react";
 
 interface NavItem {
   label: string;
@@ -91,7 +91,8 @@ const Navbar: React.FC = () => {
 
   // Smooth scroll to section
   const handleNavClick =
-    (href: string) => (e: MouseEvent<HTMLAnchorElement>): void => {
+    (href: string) =>
+    (e: MouseEvent<HTMLAnchorElement>): void => {
       if (href.startsWith("#")) {
         e.preventDefault();
         const id = href.slice(1);
@@ -128,12 +129,11 @@ const Navbar: React.FC = () => {
             <Image
               src="/icons/logocolor.svg"
               alt="Logo"
-              width={40}       
+              width={40}
               height={40}
               priority
               className="mr-2 w-24 h-24 sm:w-26 sm:h-26 md:w-28 md:h-28 lg:w-30 lg:h-30"
-/>
-
+            />
           </div>
 
           {/* Desktop Navigation */}
